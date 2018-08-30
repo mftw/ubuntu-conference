@@ -1,0 +1,26 @@
+.articles {
+    @include isSubGridContainer('2 / 3', null, 'repeat(3, 1fr)');
+    gap: 3vw;
+    grid-auto-flow: dense;
+    width: 100%;
+
+
+    article {
+
+        @include isGridItem(1);
+
+        &:first-child {
+            grid-row: span 2;
+            @include mqp {
+                grid-row: span 1;
+            }
+        }
+
+        &:last-child {
+            grid-row: span 2;
+            @include mqp {
+                grid-row: span 1;
+            }
+        }
+    }
+}

@@ -59,6 +59,90 @@ code {
   font-family: monospace;
 }
 
+figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+figure img {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  width: 100%;
+  height: 70vh;
+  background: url(../img/herogreyscale.png), no-repeat linear-gradient(160deg, rgba(119, 33, 111, 0.7) 0%, rgba(233, 84, 32, 0.7) 100%), no-repeat linear-gradient(150deg, #77216f 15%, #e95420 70%, #e95420 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  /* justify-items: center; */
+  justify-content: center;
+}
+
+.hero__title {
+  color: white;
+  margin-left: 10%;
+}
+
+.hero__subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 11%;
+}
+
+.hero__button {
+  margin-left: 11%;
+  background: tomato;
+  display: inline;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column: 2 / 3;
+  gap: 3vw;
+  grid-auto-flow: dense;
+  width: 100%;
+}
+
+.articles article {
+  grid-column: 1;
+}
+
+.articles article:first-child {
+  grid-row: span 2;
+}
+
+@media screen and (max-width: 299px) {
+  .articles article:first-child {
+    /* PHONE MQ */
+    grid-row: span 1;
+  }
+}
+
+.articles article:last-child {
+  grid-row: span 2;
+}
+
+@media screen and (max-width: 299px) {
+  .articles article:last-child {
+    /* PHONE MQ */
+    grid-row: span 1;
+  }
+}
+
 .middle-content {
   max-width: 1200px;
   background: #bada55;
