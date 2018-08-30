@@ -71,12 +71,16 @@
 
     &--bg-tech {
         // background: no-repeat center url(../icons/cti3.svg), rgba(getColor(tri1), 0.5);
-        background-color: getColor(tri1);
-        background-image: url(../icons/cti3.svg);
+        // background-color: lighten(getColor(tri1), 31%);
+        background-color: tint(getColor(tri1), 10%);
+        // background-color: #f6f6f5;
+        // background-image: url(../icons/cti4.svg);
+        background-image: url(../img/circuit2.svg);
         // background-position: bottom 100% left 0%;
-        background-position: right;
+        // background-position: right 0px bottom 30%;
         background-repeat: no-repeat;
-        background-size: 80%;
+        background-size: cover;
+        // background-size: 50%;
     }
 
     &__headline {

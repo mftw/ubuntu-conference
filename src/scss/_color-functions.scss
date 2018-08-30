@@ -1,0 +1,28 @@
+/// Slightly lighten a color, 
+/// inverted for Ubuntu design compatibility.
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color} - 
+@function tint($color, $percentage) {
+    @return mix($color, white, $percentage);
+    // @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color} -
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color} -
+@function org-tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
