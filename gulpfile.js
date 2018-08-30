@@ -39,7 +39,7 @@ gulp.task('sass-prod', function() {
             cascade: false
         }))
         .pipe(combineMq({
-            beautify: false
+            beautify: true
         }))
         .pipe(gulp.dest("src/css"))
         // .pipe(browserSync.stream());

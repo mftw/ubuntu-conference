@@ -1,26 +1,90 @@
 .articles {
-    @include isSubGridContainer('2 / 3', null, 'repeat(3, 1fr)');
+    @include isSubGridContainer('2 / 3', null, 'repeat(3, 1fr)', '2');
     gap: 3vw;
     grid-auto-flow: dense;
     width: 100%;
-
-
-    article {
-
-        @include isGridItem(1);
+    padding: 0 0 3vw 0;
+    
+    .mini-article {
+        @include isGridItem(span 1);
 
         &:first-child {
             grid-row: span 2;
+    
             @include mqp {
                 grid-row: span 1;
             }
         }
-
-        &:last-child {
+    
+        &:nth-child(5) {
             grid-row: span 2;
-            @include mqp {
+            // grid-column-end: -1;
+    
+            @include mq-phone {
                 grid-row: span 1;
             }
         }
     }
+
+    @include mq-phone {
+        grid-template-columns: 1fr;
+    }
+    
+    @include mq-tablet {
+        grid-template-columns: 1fr 1fr;
+    }
 }
+
+.mini-article {
+    background: getColor(prim2);
+    padding: 1.2vw;
+
+    figure {
+
+        img {
+            // object-fit: cover;
+            // height: 100%;
+            // width: auto;
+        }
+
+        figcaption {
+            color: getColor(prim1);
+        }
+    }
+
+    h2 {
+        font-weight: 400;
+    }
+
+    p {
+        color: getColor(tri2);
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+.row {
+    &--grey {
+        background: getColor(tri1);
+    }
+
+    &--bg-tech {
+        // background: no-repeat center url(../icons/cti3.svg), rgba(getColor(tri1), 0.5);
+        background-color: getColor(tri1);
+        background-image: url(../icons/cti3.svg);
+        // background-position: bottom 100% left 0%;
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 80%;
+    }
+
+    &__headline {
+        @include isGridItem('2 / 3', '1 / 2');
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 300;
+    }
+}
+
+

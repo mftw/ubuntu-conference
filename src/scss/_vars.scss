@@ -50,7 +50,7 @@ $color-theme: (
 }
 
 // Widths for mediaqueries
-$tablet-width: 300px;   // below is phone. 
+$tablet-width: 700px;   // below is phone. 
                         // between is tablet.
 $desktop-width: 1024px; // above is desktop 
 
@@ -60,7 +60,7 @@ $mqBuffer: 1px; // buffer between mq's
 
 $gridcontainer-exists: true;
 
-$debug: false;
+$debug: true;
 
 /*
 Root vars. STANDARD FONTS AND COLORS 

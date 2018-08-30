@@ -9,6 +9,12 @@ Root vars. STANDARD FONTS AND COLORS
   /* Ranges from 421px to 1199px */
 }
 
+a[href="#"] {
+  background-color: red;
+  border: 1px red;
+  box-shadow: 0px 0px 10px 0px red;
+}
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -25,20 +31,6 @@ body {
   color: #111111;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Prevent native touch events on Windows */
-  -ms-touch-action: none;
-  /* Prevent the callout on tap-hold and text selection */
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  /* Prevent text resize on orientation change, useful for web-apps */
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  -o-text-size-adjust: none;
-  text-size-adjust: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -111,46 +103,96 @@ figure img {
 .articles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2;
   grid-column: 2 / 3;
   gap: 3vw;
   grid-auto-flow: dense;
   width: 100%;
+  padding: 0 0 3vw 0;
 }
 
-.articles article {
-  grid-column: 1;
+.articles .mini-article {
+  grid-column: span 1;
 }
 
-.articles article:first-child {
+.articles .mini-article:first-child {
   grid-row: span 2;
 }
 
-@media screen and (max-width: 299px) {
-  .articles article:first-child {
+@media screen and (max-width: 699px) {
+  .articles .mini-article:first-child {
     /* PHONE MQ */
     grid-row: span 1;
   }
 }
 
-.articles article:last-child {
+.articles .mini-article:nth-child(5) {
   grid-row: span 2;
 }
 
-@media screen and (max-width: 299px) {
-  .articles article:last-child {
+@media screen and (max-width: 699px) {
+  .articles .mini-article:nth-child(5) {
     /* PHONE MQ */
     grid-row: span 1;
   }
 }
 
-.middle-content {
-  max-width: 1200px;
-  background: #bada55;
+@media screen and (max-width: 699px) {
+  .articles {
+    /* PHONE MQ */
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1023px) {
+  .articles {
+    /* TABLET MQ */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.mini-article {
+  background: #FFFFFF;
+  padding: 1.2vw;
+}
+
+.mini-article figure figcaption {
+  color: #E95420;
+}
+
+.mini-article h2 {
+  font-weight: 400;
+}
+
+.mini-article p {
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+.row--grey {
+  background: #AEA79F;
+}
+
+.row--bg-tech {
+  background-color: #AEA79F;
+  background-image: url(../icons/cti3.svg);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+.row__headline {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
 }
 
 .row {
   display: grid;
-  grid-template-columns: minmax(16px, 1fr) minmax(auto, 1200px) minmax(16px, 1fr);
+  grid-template-columns: minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr);
   width: 100%;
 }
 
