@@ -1,0 +1,21 @@
+{
+  "name": "lovetoride",
+  "version": "1.0.0",
+  "description": "lovetoride",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "CSS Mafia Inc.",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}

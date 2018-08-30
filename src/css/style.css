@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700");
+/*
+Root vars. STANDARD FONTS AND COLORS 
+*/
+:root {
+  /* FONTS AND FALLBACKS */
+  /* Calculation */
+  --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 100px) / (1200 - 100)));
+  /* Ranges from 421px to 1199px */
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent native touch events on Windows */
+  -ms-touch-action: none;
+  /* Prevent the callout on tap-hold and text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Prevent text resize on orientation change, useful for web-apps */
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Ubuntu", sans-serif;
+}
+
+a:not(:hover) {
+  color: #111111;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #111111;
+  text-decoration-color: #111111;
+}
+
+code {
+  font-family: monospace;
+}
+
+.middle-content {
+  max-width: 1200px;
+  background: #bada55;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(16px, 1fr) minmax(auto, 1200px) minmax(16px, 1fr);
+  width: 100%;
+}
+
+/*# sourceMappingURL=maps/style.css.map */

@@ -1,0 +1,92 @@
+// /**************************************************
+// Generel variables for framework
+// ***************************************************/
+
+// Getting fonts
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+
+//
+// SCSS VARS_____________________
+//
+// Fonts and fallbacks
+$main-font: 'Ubuntu', sans-serif;
+
+// Core Colors.
+// tc = Theme Color;
+$tc-ubuntu-orange: #E95420;
+$tc-white: #FFFFFF;
+$tc-black: #000000;
+
+// Supporting colors
+$tc-light-aubergine: #77216F;
+$tc-mid-aubergine: #5E2750;
+$tc-dark-aubergine: #2C001E;
+
+// Neutral colors
+$tc-warm-grey: #AEA79F;
+$tc-cool-grey: #333333;
+$tc-txt-grey: #111111;
+
+$color-theme: (
+    prim1: $tc-ubuntu-orange,
+    prim2: $tc-white,
+    prim3: $tc-black,
+    sec1 : $tc-light-aubergine,
+    sec2 : $tc-mid-aubergine,
+    sec3 : $tc-dark-aubergine,
+    tri1 : $tc-warm-grey,
+    tri2 : $tc-cool-grey,
+    tri3 : $tc-txt-grey
+);
+
+
+@function getColor($key) {
+    @if not map-has-key($color-theme, $key) {
+        @warn 'no color with that name found.';
+    }
+    @else {
+        @return map-get($color-theme, $key);
+    }
+}
+
+// Widths for mediaqueries
+$tablet-width: 300px;   // below is phone. 
+                        // between is tablet.
+$desktop-width: 1024px; // above is desktop 
+
+$retina-width: 2100px;  // above is retina
+
+$mqBuffer: 1px; // buffer between mq's
+
+$gridcontainer-exists: true;
+
+$debug: false;
+
+/*
+Root vars. STANDARD FONTS AND COLORS 
+*/
+:root {
+    /* FONTS AND FALLBACKS */
+    
+    
+    /* Calculation */
+    --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 100px) / (1200 - 100))); /* Ranges from 421px to 1199px */
+}
+
+
+
+
+// @mixin mkGrid($col, $gap: $grid-gap) {
+//     @if not ( type-of($col) == number ) {
+//         @warn '1st parameter is the number of columns, and therefore a number.';
+//     }
+//     display: grid;
+//     gap: $gap;
+//     grid-template-columns: repeat(#{$col}, 1fr);
+//     @include mq-phone{
+//         grid-template-columns: 1fr;
+//     }
+//     @include mq-tablet{
+//         grid-template-columns: 1fr 1fr;
+//     }
+// }

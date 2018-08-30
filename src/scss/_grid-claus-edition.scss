@@ -1,0 +1,58 @@
+
+@mixin grid3($gap){
+    display: grid;
+    gap: $gap;
+    grid-template-columns: repeat(3, 1fr);
+    @include mq-phone{
+        grid-template-columns: 1fr;
+    }
+}
+
+@mixin grid4($gap){
+    display: grid;
+    gap: $gap;
+    grid-template-columns: repeat(4, 1fr);
+    @include mq-phone{
+        grid-template-columns: 1fr;
+    }
+    @include mq-tablet{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@mixin grid12($gap){
+    display: grid;
+    gap: $gap;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+@mixin makeGrid($col, $gap) {
+    @if $col==3 {
+        @include grid3($gap);
+    }
+    @if $col==4 {
+        @include grid4($gap);
+    }
+    @if $col==12 {
+        @include grid12($gap);
+    }
+    @else {
+        @warn 'invalid number of grid, you fucking n00b!';
+    }
+}
+
+$grid-gap: 16px !default;
+
+@mixin mkGrid($col, $gap: $grid-gap) {
+    display: grid;
+    gap: $gap;
+    grid-template-columns: repeat(#{$col}, 1fr);
+
+    @include mq-phone{
+        grid-template-columns: 1fr;
+    }
+    @include mq-tablet{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+

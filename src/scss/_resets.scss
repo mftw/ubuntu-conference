@@ -1,0 +1,80 @@
+$debug: false !default;
+
+// Check for dead links during development
+@if $debug {
+    a[href="#"] {
+        background-color: red;
+        border: 1px red;
+        box-shadow: 0px 0px 10px 0px red;
+    }
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    @if not $debug {
+        // user-zoom: fixed;
+    }
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+    // box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $main-font;
+    color: getColor(tri3);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @if not $debug {
+        // user-zoom: fixed;    
+        /* Prevent native touch events on Windows */
+        -ms-touch-action: none;
+    
+        /* Prevent the callout on tap-hold and text selection */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    
+        /* Prevent text resize on orientation change, useful for web-apps */
+        -webkit-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        -o-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+}
+
+%main-font {
+    font-family: $main-font;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        // font-family: $main-font;
+        @extend %main-font;
+    }
+}
+
+a {
+    &:not(:hover) {
+        color: getColor(tri3);
+        text-decoration: none; // text-decoration-color: var(--tc-grey);
+    }
+
+    &:hover {
+        color: getColor(tri3);
+        text-decoration-color: getColor(tri3);
+    }
+}
+
+code {
+    font-family: monospace;
+}

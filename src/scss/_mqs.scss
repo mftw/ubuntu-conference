@@ -1,0 +1,172 @@
+// /**************************************************
+// Media query settings for screen and prints
+// ***************************************************/
+// @import 'misc'; // For Mixtend hack and various other
+
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group Media queries
+/// @author Michael Koch
+////
+
+
+/// Default tablet value for breakpoints.
+/// Feel very free to override in other files.
+/// @author Michael Koch
+/// @prop {any} $tablet-width - Below is phone. Between $tablet-width and $dekstop-width is tablet
+$tablet-width: 768px !default;
+
+
+/// Default desktop value for breakpoints.
+/// Feel very free to override in other files.
+/// @author Michael Koch
+/// @prop {any} $desktop-width - Above this is desktop
+$dekstop-width: 1024px !default;
+
+/// Default retina 4k value for breakpoints.
+/// Feel very free to override in other files.
+/// @author Michael Koch
+/// @prop {any} $retina-width - Above this is retina 4k
+$retina-width: 2100px !default;
+
+
+/// Default buffer value between breakpoints.
+/// Feel very free to override in other files.
+/// @author Michael Koch
+/// @prop {any} $mqBuffer - Above this is desktop
+$mqBuffer: 1px !default;
+
+
+/// Mixin to make specific compile placement mediaqueries
+/// @author Michael Koch
+/// @param {px} $tablet-width - Below is phone. Between $tablet-width and $dekstop-width is tablet
+/// @param {px} $desktop-width - Above this is desktop
+@mixin mediaQueries($tablet-width, $desktop-width) {
+    @media screen and (max-width: #{$tablet-width - $mqBuffer}) {
+      // /* Mediaquery for Phones */
+      // @include mq-std-font;
+    }
+    @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - $mqBuffer}) {
+        // /* Mediaquery for tablet */
+        // LIST MEDIAQUERIES FOR TABLET WIDTH HERE
+        // @include mq-md-scaler;
+        // @include mq-md-header;
+        // @include mq-md-gridcontainer;
+    }  
+    
+    @media screen and (min-width: #{$desktop-width}) and (max-width: #{$retina-width - $mqBuffer}) {
+        // /* Mediaquery for desktop */
+        // LIST MEDIAQUERIES FOR DESKTOP WITH HERE
+    } 
+    
+    @media screen and (min-width: #{$retina-width}) {
+        // /* Mediaquery for retina 4k */
+        // LIST MEDIAQUERIES FOR DESKTOP WIDTH HERE
+    }
+}
+
+/// Mixin to make mediaqueries for phone
+/// Use like: @include mq-phone{ color: black; }
+/// @author Michael Koch
+@mixin mq-phone {
+    @media screen and (max-width: #{$tablet-width - $mqBuffer}) {
+        /* PHONE MQ */
+      @content;
+    }
+}
+
+/// Shorthand mixin to make mediaqueries for phone
+/// Use like: @include mqp{ color: black; }
+/// @author Michael Koch
+@mixin mqp {
+  @include mq-phone {
+    @content;
+  }
+}
+
+/// Mixin to make mediaqueries for tablet
+/// Use like: @include mq-tablet{ color: black; }
+/// @author Michael Koch
+@mixin mq-tablet {
+    @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - $mqBuffer}) {
+        /* TABLET MQ */
+      @content;
+    }
+  }
+
+/// Shorthand mixin to make mediaqueries for tablet
+/// Use like: @include mqt{ color: black; }
+/// @author Michael Koch
+@mixin mqt {
+  @include mq-tablet {
+    @content;
+  }
+}
+
+/// Mixin to make mediaqueries for dekstop
+/// Use like: @include mq-desktop{ color: black; }
+/// @author Michael Koch
+  @mixin mq-desktop {
+    @media screen and (min-width: #{$desktop-width}) and (max-width: #{$retina-width - $mqBuffer}) {
+        /* DESKTOP MQ */
+      @content;
+    }
+  }
+
+/// Shorthand mixin to make mediaqueries for dekstop
+/// Use like: @include mqd{ color: black; }
+/// @author Michael Koch
+  @mixin mqd {
+    @include mq-desktop {
+      @content;
+    }
+  }
+
+/// Mixin to make mediaqueries for retina 4k
+/// Use like: @include mq-retina{ color: black; }
+/// @author Michael Koch
+@mixin mq-retina {
+  @media screen and (min-width: #{$retina-width}) {
+      /* RETINA 4k MQ */
+    @content;
+  }
+}
+
+/// Shorthand mixin to make mediaqueries for retina 4k
+/// Use like: @include mqr{ color: black; }
+/// @author Michael Koch
+@mixin mqr {
+  @include mq-retina {
+    @content;
+  }
+}
+
+/// Mixin to make custom mediaqueries
+/// Use like: @include mq-custom(700px, 1200px){ color: black; }
+/// @author Michael Koch
+/// @param {px} $min - Minimum size
+/// @param {px} $max - Maximum size
+  @mixin mq-custom($min, $max) {
+    @media screen and (min-width: #{$min}) and (max-width: #{$max - $mqBuffer}) {
+        /* CUSTOM MQ */
+      @content;
+    }
+  }
+
+  @mixin mq-custom2($string) {
+    @media screen #{unquote($string)} {
+        /* CUSTOM MQ */
+      @content;
+    }
+  }
+
+/// Mixin to make print mediaqueries
+/// Use like: @include mq-print{ color: black; }
+/// @author Michael Koch
+  @mixin mq-print {
+    @media print {
+        /* PRINT MQ */
+      @content;
+    }
+  }
