@@ -1,6 +1,7 @@
 
 .hero {
     width: 100%;
+    max-width: 1200px;
     height: 70vh;
     background: url(../img/herogreyscale.png), 
     no-repeat linear-gradient(160deg, rgba(119, 33, 111, 0.7) 0%, rgba(233, 84, 32, 0.7) 100%), 
@@ -11,16 +12,18 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    /* justify-items: center; */
+    margin: 0 auto;
     justify-content: center;
 
         &__title {
             color: white;
             margin-left: 10%;
+            max-width: 40%;
         }
         &__subtitle {
             color: rgba(255,255,255,.7);
             margin-left: 11%;
+            max-width: 40%;
         }
         &__button {
             margin-left: 11%;

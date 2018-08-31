@@ -254,6 +254,13 @@ figure img {
   line-height: 100px;
 }
 
+@media screen and (max-width: 699px) {
+  .nav-wrapper {
+    /* PHONE MQ */
+    height: 66.66667px;
+  }
+}
+
 .nav-wrapper nav {
   position: relative;
   display: flex;
@@ -272,6 +279,13 @@ figure img {
   line-height: 100px;
 }
 
+@media screen and (max-width: 699px) {
+  .nav-wrapper nav .logo {
+    /* PHONE MQ */
+    line-height: 66.66667px;
+  }
+}
+
 .nav-wrapper nav .navbar {
   display: flex;
 }
@@ -282,13 +296,11 @@ figure img {
     position: absolute;
     flex-direction: column;
     background: grey;
-    width: calc(100% - 32px);
-    top: 100px;
-    left: calc(-100% + 16px);
+    width: 100%;
+    top: 66.66667px;
+    left: -100%;
     align-items: center;
     padding: 16px 0;
-    margin: 16px;
-    border-radius: 16px;
     transition: 350ms ease-out;
   }
   .nav-wrapper nav .navbar li {
@@ -300,7 +312,7 @@ figure img {
 .nav-wrapper nav .navbar a {
   display: inline-block;
   line-height: 100px;
-  padding: 0 16px;
+  padding: 0 8px;
 }
 
 @media screen and (max-width: 699px) {
@@ -311,11 +323,18 @@ figure img {
 }
 
 .toggle-menu .navbar {
-  transform: translateX(calc(100% + 16px));
+  transform: translateX(100%);
+}
+
+.toggle-menu .mobile-menu {
+  color: red;
 }
 
 .mobile-menu {
+  padding-right: 16px;
   display: none;
+  line-height: 66.66667px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 699px) {
@@ -327,6 +346,7 @@ figure img {
 
 .hero {
   width: 100%;
+  max-width: 1200px;
   height: 70vh;
   background: url(../img/herogreyscale.png), no-repeat linear-gradient(160deg, rgba(119, 33, 111, 0.7) 0%, rgba(233, 84, 32, 0.7) 100%), no-repeat linear-gradient(150deg, #77216f 15%, #e95420 70%, #e95420 100%);
   background-repeat: no-repeat;
@@ -335,18 +355,20 @@ figure img {
   display: flex;
   flex-direction: column;
   align-items: start;
-  /* justify-items: center; */
+  margin: 0 auto;
   justify-content: center;
 }
 
 .hero__title {
   color: white;
   margin-left: 10%;
+  max-width: 40%;
 }
 
 .hero__subtitle {
   color: rgba(255, 255, 255, 0.7);
   margin-left: 11%;
+  max-width: 40%;
 }
 
 .hero__button {
@@ -445,6 +467,61 @@ figure img {
   text-align: center;
   font-size: 3rem;
   font-weight: 300;
+}
+
+.footer {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-rows: auto auto;
+  padding: 16px 0;
+}
+
+.footer__menu {
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 699px) {
+  .footer__menu {
+    /* PHONE MQ */
+    flex-basis: 100%;
+  }
+}
+
+.footer__menu ul {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__menu ul li a {
+  padding: 8px 16px;
+  line-height: 100%;
+}
+
+.footer__submenu {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.footer__submenu ul {
+  display: flex;
+  padding: 8px 0 0 0;
+  flex-wrap: wrap;
+}
+
+.footer__submenu ul li a {
+  line-height: 100%;
+  margin: 0 16px;
 }
 
 .row {

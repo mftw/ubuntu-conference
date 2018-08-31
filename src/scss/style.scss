@@ -8,6 +8,7 @@
 @import 'nav';
 @import 'hero';
 @import 'articles';
+@import 'footer';
 
 .row {
     @include isGridContainer('minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr)');

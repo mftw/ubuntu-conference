@@ -1,0 +1,58 @@
+.footer {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-rows: auto auto;
+    padding: 16px 0;
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        // justify-items: center;
+        // align-items: center;
+        // align-content: center;
+        background: black;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1200px;
+        @include mq-phone {
+            flex-basis: 100%;
+            
+        }
+
+        ul {
+            display: grid;
+            grid-auto-flow: column;
+            grid-gap: 16px;
+            padding: 0;
+            margin: 0;
+
+            
+            li {
+                a {
+                    padding: 8px 16px;
+                    line-height: 100%;
+                }
+            }
+        }
+    }
+    &__submenu {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+        ul {
+            display: flex;
+            padding: 8px 0 0 0;
+            flex-wrap: wrap;
+            li {
+                
+                a {
+                    line-height: 100%;
+                    margin: 0 16px;
+                }
+            }
+        }
+
+    }
+}
