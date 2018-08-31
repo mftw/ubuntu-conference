@@ -232,6 +232,21 @@ code {
   font-family: monospace;
 }
 
+figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+figure img {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
 
 .nav-wrapper {
   background: darkslategrey;
@@ -245,7 +260,7 @@ code {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 299px) {
+@media screen and (max-width: 699px) {
   .nav-wrapper nav {
     /* PHONE MQ */
   }
@@ -269,27 +284,11 @@ code {
   display: none;
 }
 
-@media screen and (max-width: 299px) {
+@media screen and (max-width: 699px) {
   .mobile-menu {
     /* PHONE MQ */
     display: inline-block;
   }
-
-figure {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: auto;
-}
-
-figure img {
-  object-fit: contain;
-  object-position: center;
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-
 }
 
 .hero {
@@ -324,10 +323,6 @@ figure img {
   padding: 8px 16px;
   border-radius: 3px;
 }
-
-.middle-content {
-  max-width: 1200px;
-  background: #bada55;
 
 .articles {
   display: grid;
@@ -416,7 +411,45 @@ figure img {
   text-align: center;
   font-size: 3rem;
   font-weight: 300;
+}
 
+.iot-desktop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 2 / 3;
+  column-gap: 2vw;
+}
+
+@media screen and (max-width: 699px) {
+  .iot-desktop {
+    /* PHONE MQ */
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1023px) {
+  .iot-desktop {
+    /* TABLET MQ */
+    grid-template-columns: 1fr;
+  }
+}
+
+.iot-card {
+  grid-column: span 1;
+  height: 50vmin;
+  width: 50vmin;
+  text-align: right;
+}
+
+.desktop-card {
+  grid-column: span 1;
+  height: 50vmin;
+  width: 50vmin;
+  text-align: left;
+}
+
+.desktop-card h2 {
+  color: white;
 }
 
 .row {

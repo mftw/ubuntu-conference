@@ -46,6 +46,7 @@ $nav-height: 100px;
 @function getColor($key) {
     @if not map-has-key($color-theme, $key) {
         @warn 'no color with that name found.';
+        @return deeppink;
     }
     @else {
         @return map-get($color-theme, $key);

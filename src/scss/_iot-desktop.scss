@@ -1,7 +1,41 @@
 .iot-desktop {
     @include isSubGridContainer('2 / 3', null, '1fr 1fr');
+    column-gap: 2vw;
+    // align-content: space-between;
+    // &:first-child {
+
+    // }
+
+    @include mq-phone {
+        grid-template-columns: 1fr;
+    }
+
+    @include mq-tablet {
+        grid-template-columns: 1fr;
+    }
 }
 
 .iot-card {
-    
+    @include isGridItem(span 1);
+    height: 50vmin;
+    width: 50vmin;
+    text-align: right;
+    // display: flex;
+    // flex-direction: column;
+    // // align-items: flex-end;
+    // align-content: flex-end
+    h2 {
+    }
+}
+
+.desktop-card {
+    @include isGridItem(span 1);
+    height: 50vmin;
+    width: 50vmin;
+    text-align: left;
+    // display: flex;
+
+    h2 {
+        color: lighten(#AEA79F, 90%);
+    }
 }
