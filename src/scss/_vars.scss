@@ -50,7 +50,7 @@ $color-theme: (
 }
 
 // Widths for mediaqueries
-$tablet-width: 300px;   // below is phone. 
+$tablet-width: 700px;   // below is phone. 
                         // between is tablet.
 $desktop-width: 1024px; // above is desktop 
 
@@ -60,7 +60,7 @@ $mqBuffer: 1px; // buffer between mq's
 
 $gridcontainer-exists: true;
 
-$debug: false;
+$debug: true;
 
 /*
 Root vars. STANDARD FONTS AND COLORS 
@@ -72,21 +72,3 @@ Root vars. STANDARD FONTS AND COLORS
     /* Calculation */
     --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 100px) / (1200 - 100))); /* Ranges from 421px to 1199px */
 }
-
-
-
-
-// @mixin mkGrid($col, $gap: $grid-gap) {
-//     @if not ( type-of($col) == number ) {
-//         @warn '1st parameter is the number of columns, and therefore a number.';
-//     }
-//     display: grid;
-//     gap: $gap;
-//     grid-template-columns: repeat(#{$col}, 1fr);
-//     @include mq-phone{
-//         grid-template-columns: 1fr;
-//     }
-//     @include mq-tablet{
-//         grid-template-columns: 1fr 1fr;
-//     }
-// }
