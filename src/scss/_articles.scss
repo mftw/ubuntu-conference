@@ -18,7 +18,6 @@
     
         &:nth-child(5) {
             grid-row: span 2;
-            // grid-column-end: -1;
     
             @include mq-phone {
                 grid-row: span 1;
@@ -38,7 +37,6 @@
 .mini-article {
     background: getColor(prim2);
     padding: 1.2vw;
-    // position: relative;
 
     figure {
 
