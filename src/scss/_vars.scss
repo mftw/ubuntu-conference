@@ -39,6 +39,9 @@ $color-theme: (
     tri3 : $tc-txt-grey
 );
 
+//navigation
+$nav-height: 100px;
+
 
 @function getColor($key) {
     @if not map-has-key($color-theme, $key) {
