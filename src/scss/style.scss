@@ -9,10 +9,7 @@
 @import 'hero';
 @import 'articles';
 
-
-
 .row {
     @include isGridContainer('minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr)');
     width: 100%;
-    // padding: 3vw;
 }
