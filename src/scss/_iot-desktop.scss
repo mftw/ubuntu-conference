@@ -1,10 +1,16 @@
 .iot-desktop {
-    @include isSubGridContainer('2 / 3', null, '1fr 1fr');
-    column-gap: 2vw;
+    // @include isSubGridContainer('2 / 3', null, '1fr 1fr');
+    @include isGridItem('2 / 3');
+    gap: 2vw;
+    // flex-basis: 10px;
+    // row-gap: 2vw;
     // align-content: space-between;
     // &:first-child {
 
     // }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 
     @include mq-phone {
         grid-template-columns: 1fr;
@@ -16,26 +22,44 @@
 }
 
 .iot-card {
-    @include isGridItem(span 1);
-    height: 50vmin;
-    width: 50vmin;
+    // @include isGridItem(span 1);
+    // height: 50vmin;
+    // width: 50vmin;
     text-align: right;
+    border: 1px solid black;
+    // margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-end;
+    // align-content: flex-end
     // display: flex;
     // flex-direction: column;
-    // // align-items: flex-end;
-    // align-content: flex-end
+    // justify-items: right;
+    // justify-content: right;
+    width: 50%;
+    p {
+        align-self: flex-end;
+    }
     h2 {
     }
 }
 
 .desktop-card {
-    @include isGridItem(span 1);
-    height: 50vmin;
-    width: 50vmin;
+    // @include isGridItem(span 1);
+    // height: 50vmin;
+    // width: 50vmin;
     text-align: left;
+    border: 1px solid black;
+    width: 50%;
+
     // display: flex;
+    // flex-direction: column;
+    
+    p {
+        // width: 50%;
+        // align-self: flex-start;
+    }
 
     h2 {
-        color: lighten(#AEA79F, 90%);
     }
 }

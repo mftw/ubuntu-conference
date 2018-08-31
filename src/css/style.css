@@ -414,10 +414,11 @@ figure img {
 }
 
 .iot-desktop {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-column: 2 / 3;
-  column-gap: 2vw;
+  gap: 2vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 @media screen and (max-width: 699px) {
@@ -435,21 +436,21 @@ figure img {
 }
 
 .iot-card {
-  grid-column: span 1;
-  height: 50vmin;
-  width: 50vmin;
   text-align: right;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.iot-card p {
+  align-self: flex-end;
 }
 
 .desktop-card {
-  grid-column: span 1;
-  height: 50vmin;
-  width: 50vmin;
   text-align: left;
-}
-
-.desktop-card h2 {
-  color: white;
+  border: 1px solid black;
+  width: 50%;
 }
 
 .row {
