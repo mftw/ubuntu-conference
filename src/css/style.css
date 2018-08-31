@@ -232,49 +232,6 @@ code {
   font-family: monospace;
 }
 
-
-.nav-wrapper {
-  background: darkslategrey;
-  width: 100%;
-  line-height: 100px;
-}
-
-.nav-wrapper nav {
-  display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-@media screen and (max-width: 299px) {
-  .nav-wrapper nav {
-    /* PHONE MQ */
-  }
-}
-
-.nav-wrapper nav .logo {
-  line-height: 100px;
-}
-
-.nav-wrapper nav .navbar {
-  display: flex;
-}
-
-.nav-wrapper nav .navbar a {
-  display: inline-block;
-  line-height: 100px;
-  padding: 0 16px;
-}
-
-.mobile-menu {
-  display: none;
-}
-
-@media screen and (max-width: 299px) {
-  .mobile-menu {
-    /* PHONE MQ */
-    display: inline-block;
-  }
-
 figure {
   margin: 0;
   padding: 0;
@@ -289,7 +246,83 @@ figure img {
   height: auto;
   margin: 0;
   padding: 0;
+}
 
+.nav-wrapper {
+  background: darkslategrey;
+  width: 100%;
+  line-height: 100px;
+}
+
+.nav-wrapper nav {
+  position: relative;
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 699px) {
+  .nav-wrapper nav {
+    /* PHONE MQ */
+    justify-content: space-between;
+  }
+}
+
+.nav-wrapper nav .logo {
+  line-height: 100px;
+}
+
+.nav-wrapper nav .navbar {
+  display: flex;
+}
+
+@media screen and (max-width: 699px) {
+  .nav-wrapper nav .navbar {
+    /* PHONE MQ */
+    position: absolute;
+    flex-direction: column;
+    background: grey;
+    width: calc(100% - 32px);
+    top: 100px;
+    left: calc(-100% + 16px);
+    align-items: center;
+    padding: 16px 0;
+    margin: 16px;
+    border-radius: 16px;
+    transition: 350ms ease-out;
+  }
+  .nav-wrapper nav .navbar li {
+    height: auto;
+    line-height: 58.82353px;
+  }
+}
+
+.nav-wrapper nav .navbar a {
+  display: inline-block;
+  line-height: 100px;
+  padding: 0 16px;
+}
+
+@media screen and (max-width: 699px) {
+  .nav-wrapper nav .navbar a {
+    /* PHONE MQ */
+    line-height: 58.82353px;
+  }
+}
+
+.toggle-menu .navbar {
+  transform: translateX(calc(100% + 16px));
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 699px) {
+  .mobile-menu {
+    /* PHONE MQ */
+    display: inline-block;
+  }
 }
 
 .hero {
@@ -324,10 +357,6 @@ figure img {
   padding: 8px 16px;
   border-radius: 3px;
 }
-
-.middle-content {
-  max-width: 1200px;
-  background: #bada55;
 
 .articles {
   display: grid;
@@ -416,7 +445,6 @@ figure img {
   text-align: center;
   font-size: 3rem;
   font-weight: 300;
-
 }
 
 .row {
