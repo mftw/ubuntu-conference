@@ -62,5 +62,5 @@ gulp.task('compile', ['sass'], function() {
 });
 
 // Default Task
-// gulp.task('default', ['serve']);
-gulp.task('default', ['compile']);
+gulp.task('default', ['serve']);
+// gulp.task('default', ['compile']);
