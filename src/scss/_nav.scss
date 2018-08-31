@@ -1,0 +1,37 @@
+$nav-height: 100px !default;
+
+.nav-wrapper {
+    background: darkslategrey;
+    width: 100%;
+    line-height: $nav-height;
+
+    nav {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @include mq-phone {}
+
+        .logo {
+            line-height: $nav-height;
+        }
+
+        .navbar {
+            display: flex;
+
+            a {
+                display: inline-block;
+                line-height: $nav-height;
+                padding: 0 16px;
+            }
+        }
+    }
+}
+
+.mobile-menu {
+    display: none;
+
+    @include mq-phone {
+        display: inline-block;
+    }
+}
