@@ -1,4 +1,5 @@
-// @import 'normalize8-not-sass';
+@import 'normalize8-not-sass';
+@import 'color-functions';
 @import 'vars';
 @import 'resets';
 @import 'grid';
@@ -8,21 +9,7 @@
 @import 'hero';
 @import 'articles';
 
-
-.wrapper {
-    // @include isGridContainer('minmax(16px, 1fr) minmax(auto, 1200px) minmax(16px, 1fr)');
-
-}
-
-.middle-content {
-    // justify-self: center;
-    // align-self: center;
-    max-width: 1200px;
-    // @include isGridContainer('repeat(5, 1fr)');
-    background: #bada55;
-}
-
 .row {
-    @include isGridContainer('minmax(16px, 1fr) minmax(auto, 1200px) minmax(16px, 1fr)');
+    @include isGridContainer('minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr)');
     width: 100%;
 }

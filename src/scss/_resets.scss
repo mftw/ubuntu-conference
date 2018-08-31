@@ -82,3 +82,18 @@ a {
 code {
     font-family: monospace;
 }
+
+figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    img {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+}
