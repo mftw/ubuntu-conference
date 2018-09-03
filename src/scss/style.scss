@@ -1,16 +1,18 @@
 @import 'normalize8-not-sass';
 @import 'color-functions';
-@import 'vars';
-@import 'resets';
 @import 'grid';
 @import 'grid-claus-edition';
 @import 'mqs';
+@import 'typography';
+@import 'vars';
+@import 'resets';
 @import 'nav';
 @import 'hero';
 @import 'articles';
 @import 'footer';
+@import 'iot-desktop';
 
-.row {
-    @include isGridContainer('minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr)');
-    width: 100%;
-}
+// .row {
+//     @include isGridContainer('minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr)');
+//     width: 100%;
+// }

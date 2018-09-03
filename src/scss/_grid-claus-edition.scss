@@ -45,8 +45,12 @@ $grid-gap: 16px !default;
 
 @mixin mkGrid($col, $gap: $grid-gap) {
     display: grid;
-    gap: $gap;
     grid-template-columns: repeat(#{$col}, 1fr);
+    
+    @if not $gap == false {
+        gap: $gap;
+    }
+
 
     @include mq-phone{
         grid-template-columns: 1fr;

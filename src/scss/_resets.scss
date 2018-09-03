@@ -10,11 +10,16 @@ $debug: false !default;
 }
 
 html {
+    $min_width: $tablet-width;
+    $max_width: $dekstop-width;
+    $min_font: 14px;
+    $max_font: 19px;
+    @include fluid-font($min_width, $max_width, $min_font, $max_font);
     box-sizing: border-box;
     scroll-behavior: smooth;
 
     @if not $debug {
-        // user-zoom: fixed;
+        user-zoom: fixed;
     }
 }
 
@@ -22,6 +27,7 @@ html {
     box-sizing: inherit;
     // box-sizing: inherit;
 }
+
 ul {
     margin: 0;
     list-style: none;
@@ -34,6 +40,10 @@ body {
     color: getColor(tri3);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    // font-smooth: auto;
 
     @if not $debug {
         // user-zoom: fixed;    
@@ -96,4 +106,18 @@ figure {
         margin: 0;
         padding: 0;
     }
+}
+
+p {
+    font-weight: 400;
+    color: getColor(tri3);
+}
+
+%row {
+    @include isGridContainer('minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr)');
+    width: 100%;
+}
+
+.row {
+    @extend %row;
 }

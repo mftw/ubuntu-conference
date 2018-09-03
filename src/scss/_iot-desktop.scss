@@ -1,0 +1,129 @@
+
+
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @author Michael Koch
+/// @group iot-desktop
+////
+
+.iot-desktop {
+    @include isGridItem('2 / 3');
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+    padding-top: 1rem;    
+    
+    @include mq-phone {
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+@mixin squareElement($size) {
+    @if ($size == null) or (type-of($size) != number) {
+        @warn 'should be a number';
+    } 
+    min-height: $size;
+    max-width: $size; 
+}
+
+.card {
+    @include squareElement(28vw);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    h2 {
+        margin: 0 1rem;
+        font-size: 3rem;
+    }
+    
+    p {
+        margin: 1rem;
+        width: 70%;
+    }
+
+    @include mq-phone {
+        min-width: 100%;
+    }
+
+    @if $debug {
+        border: 1px solid black;
+    }
+
+    &--txt-right {
+        @extend .card;
+        text-align: right;
+        align-items: flex-end;
+        h2,
+         p
+          {
+            text-align: right;
+        }
+    }
+
+    &--bg-iot {
+        @extend .card;
+        background: tint(getColor(prim1), 93%);
+        background-image: url(../icons/iot.svg);
+        background-repeat: no-repeat;
+        background-size: 60%;
+        // background-position: 7% 93%;
+        background-position: 7% 7%;
+        background-blend-mode: overlay;
+
+        p, h2 {
+            color: getColor(prim2);
+        }
+    }
+
+    &--bg-dekstop {
+        @extend .card;
+        background: tint(getColor(sec2), 93%);
+        background-image: url(../icons/desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 60%;
+        background-position: 93% 93%;
+        background-blend-mode: overlay;
+
+        p, h2 {
+            color: getColor(prim2);
+        }
+    }
+    
+    &__title--right {
+        text-align: right;
+        align-self: flex-end;
+    }
+
+    &__button {
+        @mixin button-prop {
+            display: block;
+            width: 30%;
+            text-align: center;
+            align-self: center;
+            margin: 1rem;
+
+            @include mq-phone {
+                align-self: flex-end;
+            }
+        }
+
+        @include button-prop();
+
+        &--tc-sec1 {
+            @include button-prop();
+            background: tint(getColor(sec1), 30%);
+        }
+
+        &--tc-prim1 {
+            @include button-prop();
+            background: tint(getColor(prim1), 30%);
+        }
+    }
+}
