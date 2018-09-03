@@ -178,22 +178,26 @@ template {
 /*
 Root vars. STANDARD FONTS AND COLORS 
 */
-:root {
-  /* FONTS AND FALLBACKS */
-  /* Calculation */
-  --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 100px) / (1200 - 100)));
-  /* Ranges from 421px to 1199px */
-}
-
-a[href="#"] {
-  background-color: red;
-  border: 1px red;
-  box-shadow: 0px 0px 10px 0px red;
-}
-
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  user-zoom: fixed;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: calc(14px + 5 * ((100vw - 600px) / 424));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 19px;
+  }
 }
 
 *, ::before, ::after {
@@ -212,6 +216,22 @@ body {
   color: #111111;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* Prevent native touch events on Windows */
+  -ms-touch-action: none;
+  /* Prevent the callout on tap-hold and text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Prevent text resize on orientation change, useful for web-apps */
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -232,6 +252,32 @@ code {
   font-family: monospace;
 }
 
+figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+figure img {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-weight: 400;
+  color: #111111;
+}
+
+.row, .row--bg-tech {
+  display: grid;
+  grid-template-columns: minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr);
+  width: 100%;
+}
 
 .nav-wrapper {
   background: darkslategrey;
@@ -245,7 +291,7 @@ code {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 299px) {
+@media screen and (max-width: 599px) {
   .nav-wrapper nav {
     /* PHONE MQ */
   }
@@ -269,27 +315,11 @@ code {
   display: none;
 }
 
-@media screen and (max-width: 299px) {
+@media screen and (max-width: 599px) {
   .mobile-menu {
     /* PHONE MQ */
     display: inline-block;
   }
-
-figure {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: auto;
-}
-
-figure img {
-  object-fit: contain;
-  object-position: center;
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-
 }
 
 .hero {
@@ -325,10 +355,6 @@ figure img {
   border-radius: 3px;
 }
 
-.middle-content {
-  max-width: 1200px;
-  background: #bada55;
-
 .articles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -340,15 +366,11 @@ figure img {
   padding: 0 0 3vw 0;
 }
 
-.articles .mini-article {
-  grid-column: span 1;
-}
-
 .articles .mini-article:first-child {
   grid-row: span 2;
 }
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 599px) {
   .articles .mini-article:first-child {
     /* PHONE MQ */
     grid-row: span 1;
@@ -359,21 +381,21 @@ figure img {
   grid-row: span 2;
 }
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 599px) {
   .articles .mini-article:nth-child(5) {
     /* PHONE MQ */
     grid-row: span 1;
   }
 }
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 599px) {
   .articles {
     /* PHONE MQ */
     grid-template-columns: 1fr;
   }
 }
 
-@media screen and (min-width: 700px) and (max-width: 1023px) {
+@media screen and (min-width: 600px) and (max-width: 1023px) {
   .articles {
     /* TABLET MQ */
     grid-template-columns: 1fr 1fr;
@@ -381,8 +403,18 @@ figure img {
 }
 
 .mini-article {
+  grid-column: span 1;
   background: #FFFFFF;
   padding: 1.2vw;
+  text-align: justify;
+  text-justify: newspaper;
+}
+
+.mini-article figure img {
+  min-height: 20vmin;
+  height: 20vh;
+  max-height: 20vmax;
+  object-fit: cover;
 }
 
 .mini-article figure figcaption {
@@ -395,12 +427,13 @@ figure img {
 
 .mini-article p {
   color: #333333;
-  margin: 0;
+  margin-bottom: 1rem;
   padding: 0;
 }
 
-.row--grey {
-  background: #AEA79F;
+.mini-article a {
+  position: relative;
+  bottom: 0;
 }
 
 .row--bg-tech {
@@ -408,6 +441,7 @@ figure img {
   background-image: url(../img/circuit2.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 0% / 50%;
 }
 
 .row__headline {
@@ -416,13 +450,138 @@ figure img {
   text-align: center;
   font-size: 3rem;
   font-weight: 300;
-
 }
 
-.row {
-  display: grid;
-  grid-template-columns: minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr);
-  width: 100%;
+.iot-desktop {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 1rem 0;
+  padding-top: 1rem;
+}
+
+@media screen and (max-width: 599px) {
+  .iot-desktop {
+    /* PHONE MQ */
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+}
+
+.card, .card--txt-right, .card--bg-iot, .card--bg-dekstop {
+  min-height: 28vw;
+  max-width: 28vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.card h2, .card--txt-right h2, .card--bg-iot h2, .card--bg-dekstop h2 {
+  margin: 0 1rem;
+  font-size: 3rem;
+}
+
+.card p, .card--txt-right p, .card--bg-iot p, .card--bg-dekstop p {
+  margin: 1rem;
+  width: 70%;
+}
+
+@media screen and (max-width: 599px) {
+  .card, .card--txt-right, .card--bg-iot, .card--bg-dekstop {
+    /* PHONE MQ */
+    min-width: 100%;
+  }
+}
+
+.card--txt-right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.card--txt-right h2,
+.card--txt-right p {
+  text-align: right;
+}
+
+.card--bg-iot {
+  background: #eb6030;
+  background-image: url(../icons/iot.svg);
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: 7% 7%;
+  background-blend-mode: overlay;
+}
+
+.card--bg-iot p, .card--bg-iot h2 {
+  color: #FFFFFF;
+}
+
+.card--bg-dekstop {
+  background: #69365c;
+  background-image: url(../icons/desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: 93% 93%;
+  background-blend-mode: overlay;
+}
+
+.card--bg-dekstop p, .card--bg-dekstop h2 {
+  color: #FFFFFF;
+}
+
+.card__title--right {
+  text-align: right;
+  align-self: flex-end;
+}
+
+.card__button {
+  display: block;
+  width: 30%;
+  text-align: center;
+  align-self: center;
+  margin: 1rem;
+}
+
+@media screen and (max-width: 599px) {
+  .card__button {
+    /* PHONE MQ */
+    align-self: flex-end;
+  }
+}
+
+.card__button--tc-sec1 {
+  display: block;
+  width: 30%;
+  text-align: center;
+  align-self: center;
+  margin: 1rem;
+  background: #d6bcd4;
+}
+
+@media screen and (max-width: 599px) {
+  .card__button--tc-sec1 {
+    /* PHONE MQ */
+    align-self: flex-end;
+  }
+}
+
+.card__button--tc-prim1 {
+  display: block;
+  width: 30%;
+  text-align: center;
+  align-self: center;
+  margin: 1rem;
+  background: #f8ccbc;
+}
+
+@media screen and (max-width: 599px) {
+  .card__button--tc-prim1 {
+    /* PHONE MQ */
+    align-self: flex-end;
+  }
 }
 
 /*# sourceMappingURL=maps/style.css.map */
