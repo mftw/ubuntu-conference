@@ -1,3 +1,15 @@
+@function strip-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+@function px2rem($px, $root-px: 16){
+    $value: strip-unit($px);
+    $root-value: strip-unit($root-px);
+    @return $value / $root-value + rem;
+}
 
 .hero {
     width: 100%;
@@ -30,7 +42,10 @@
             background: tomato;
             display: inline;
             text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 3px;
+            // Make padding and border-radius scale with the font-size
+            padding: px2rem(8px) px2rem(16px);
+            border-radius: px2rem(3px);
+            // padding: 8px 16px;
+            // border-radius: 3px;
         }
 }

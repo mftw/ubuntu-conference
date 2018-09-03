@@ -16,11 +16,6 @@ gulp.task('sass', function() {
         .pipe(sass({
             outputStyle: 'expanded', 
             errorLogToConsole: true}))
-        // .pipe(autoprefixer({
-        //     // browsers: ['last 5 versions'],
-        //     browsers: ['last 15 versions', '> 5%', 'ie 8', 'ie 7'],
-        //     cascade: true
-        // }))
         .pipe(sourcemaps.write("./maps"))
         // .pipe(sourcemaps.write())
         .pipe(gulp.dest("src/css"))
@@ -56,9 +51,24 @@ gulp.task('serve', ['sass'], function() {
     gulp.watch("src/*.html").on('change', browserSync.reload);
 });
 
-// Watch Sass & Serve
+// Watch Sass-prod & Serve
+gulp.task('serve-prod', ['sass-prod'], function() {
+    browserSync.init({
+        server: "./src" 
+    });
+
+    gulp.watch(['src/scss/**/*.scss'], ['sass-prod']);
+    gulp.watch("src/*.html").on('change', browserSync.reload);
+});
+
+// Watch Sass-prod & compile
 gulp.task('compile', ['sass'], function() {
     gulp.watch(['src/scss/**/*.scss'], ['sass']);
+});
+
+// Watch Sass & compile
+gulp.task('compile-prod', ['sass-prod'], function() {
+    gulp.watch(['src/scss/**/*.scss'], ['sass-prod']);
 });
 
 // Default Task
