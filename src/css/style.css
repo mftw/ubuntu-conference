@@ -379,7 +379,7 @@ p {
   width: 100%;
   max-width: 1200px;
   height: 70vh;
-  background: url(../img/herogreyscale.png), no-repeat linear-gradient(160deg, rgba(119, 33, 111, 0.7) 0%, rgba(233, 84, 32, 0.7) 100%), no-repeat linear-gradient(150deg, #77216f 15%, #e95420 70%, #e95420 100%);
+  background: url(../img/hero.png), no-repeat linear-gradient(160deg, rgba(119, 33, 111, 0.7) 0%, rgba(233, 84, 32, 0.7) 100%), no-repeat linear-gradient(150deg, #77216f 15%, #e95420 70%, #e95420 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -504,26 +504,15 @@ p {
 }
 
 .footer {
-  display: grid;
-  grid-gap: 24px;
-  grid-template-rows: auto auto;
-  padding: 16px 0;
+  padding: 40px 0;
 }
 
 .footer__menu {
   display: flex;
   justify-content: space-between;
-  background: black;
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-}
-
-@media screen and (max-width: 599px) {
-  .footer__menu {
-    /* PHONE MQ */
-    flex-basis: 100%;
-  }
 }
 
 .footer__menu ul {
@@ -540,17 +529,15 @@ p {
 }
 
 .footer__submenu {
+  margin: 40px 0 0 0;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-items: center;
   align-items: center;
 }
 
 .footer__submenu ul {
   display: flex;
   padding: 8px 0 0 0;
-  flex-wrap: wrap;
 }
 
 .footer__submenu ul li a {
@@ -688,6 +675,106 @@ p {
     /* PHONE MQ */
     align-self: flex-end;
   }
+}
+
+.tilmelding {
+  padding: 32px;
+  margin: auto;
+  width: 90%;
+  max-width: 450px;
+  position: absolute;
+  z-index: 8;
+  top: 100px;
+  left: 0;
+  right: 0;
+  transform: scale(0);
+  opacity: 0;
+  background: #ebebeb;
+  border-radius: 20%;
+  transition: 350ms;
+}
+
+.tilmelding .close-tilmeld {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 120%;
+  cursor: pointer;
+}
+
+.tilmelding h3 {
+  text-align: center;
+  margin: 0 0 16px 0;
+  letter-spacing: 2px;
+}
+
+.tilmelding .tilmeld {
+  display: grid;
+  margin: 0 auto;
+}
+
+.tilmelding .tilmeld input[type=text],
+.tilmelding .tilmeld select {
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.tilmelding .tilmeld label {
+  padding: 4px 8px;
+  color: #333333;
+}
+
+.tilmelding .tilmeld input[type=submit] {
+  width: 100%;
+  background-color: tomato;
+  color: white;
+  padding: 14px 20px;
+  margin: 24px 0 0 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tilmelding .tilmeld .dage {
+  display: grid;
+  grid-gap: 8px;
+}
+
+.tilmelding .tilmeld .dage label:not(:first-of-type) {
+  background: white;
+  line-height: 100%;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.tilmelding .tilmeld .dage label:not(:first-of-type) span {
+  opacity: .4;
+}
+
+.tilmelding .tilmeld .dage label:not(:first-of-type) input[type=checkbox] {
+  margin-right: 8px;
+}
+
+.tilmelding .tilmeld .dage label:not(:first-of-type) input[type=checkbox]:checked + span {
+  opacity: 1;
+  color: #E95420;
+}
+
+.tilmelding .tilmeld .dage label:not(:first-of-type):hover {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+.toggle-tilmeld .tilmelding {
+  transform: scale(1);
+  border-radius: 4px;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=maps/style.css.map */
