@@ -1,65 +1,133 @@
-.iot-desktop {
-    // @include isSubGridContainer('2 / 3', null, '1fr 1fr');
-    @include isGridItem('2 / 3');
-    gap: 2vw;
-    // flex-basis: 10px;
-    // row-gap: 2vw;
-    // align-content: space-between;
-    // &:first-child {
 
-    // }
+
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @author Michael Koch
+/// @group iot-desktop
+////
+
+.iot-desktop {
+    @include isGridItem('2 / 3');
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-
+    margin: 1rem 0;
+    padding-top: 1rem;    
+    
     @include mq-phone {
-        grid-template-columns: 1fr;
-    }
-
-    @include mq-tablet {
-        grid-template-columns: 1fr;
+        justify-content: flex-start;
+        flex-direction: column;
     }
 }
 
-.iot-card {
-    // @include isGridItem(span 1);
-    // height: 50vmin;
-    // width: 50vmin;
-    text-align: right;
-    border: 1px solid black;
-    // margin-right: 10px;
+
+@mixin squareElement($size) {
+    @if ($size == null) or (type-of($size) != number) {
+        @warn 'should be a number';
+    } 
+    min-height: $size;
+    max-width: $size; 
+}
+
+.card {
+    @include squareElement(28vw);
+    position: relative;
     display: flex;
     flex-direction: column;
-    // align-items: flex-end;
-    // align-content: flex-end
-    // display: flex;
-    // flex-direction: column;
-    // justify-items: right;
-    // justify-content: right;
-    width: 50%;
-    p {
-        align-self: flex-end;
-    }
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
     h2 {
+        margin: 0 1rem;
+        font-size: 3rem;
     }
-}
-
-.desktop-card {
-    // @include isGridItem(span 1);
-    // height: 50vmin;
-    // width: 50vmin;
-    text-align: left;
-    border: 1px solid black;
-    width: 50%;
-
-    // display: flex;
-    // flex-direction: column;
     
     p {
-        // width: 50%;
-        // align-self: flex-start;
+        margin: 1rem;
+        width: 70%;
     }
 
-    h2 {
+    @include mq-phone {
+        min-width: 100%;
+    }
+
+    @if $debug {
+        border: 1px solid black;
+    }
+
+    &--txt-right {
+        @extend .card;
+        text-align: right;
+        align-items: flex-end;
+        h2,
+         p
+          {
+            text-align: right;
+        }
+    }
+
+    &--bg-iot {
+        @extend .card;
+        background: tint(getColor(prim1), 93%);
+        background-image: url(../icons/iot.svg);
+        background-repeat: no-repeat;
+        background-size: 60%;
+        // background-position: 7% 93%;
+        background-position: 7% 7%;
+        background-blend-mode: overlay;
+
+        p, h2 {
+            color: getColor(prim2);
+        }
+    }
+
+    &--bg-dekstop {
+        @extend .card;
+        background: tint(getColor(sec2), 93%);
+        background-image: url(../icons/desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 60%;
+        background-position: 93% 93%;
+        background-blend-mode: overlay;
+
+        p, h2 {
+            color: getColor(prim2);
+        }
+    }
+    
+    &__title--right {
+        text-align: right;
+        align-self: flex-end;
+    }
+
+    &__button {
+        @mixin button-prop {
+            display: block;
+            width: 30%;
+            text-align: center;
+            align-self: center;
+            margin: 1rem;
+
+            @include mq-phone {
+                align-self: flex-end;
+            }
+        }
+
+        @include button-prop();
+
+        &--tc-sec1 {
+            @include button-prop();
+            background: tint(getColor(sec1), 30%);
+        }
+
+        &--tc-prim1 {
+            @include button-prop();
+            background: tint(getColor(prim1), 30%);
+        }
+
+        &--right {
+
+        }
     }
 }

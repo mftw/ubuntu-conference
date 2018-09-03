@@ -54,7 +54,7 @@ $nav-height: 100px;
 }
 
 // Widths for mediaqueries
-$tablet-width: 700px;   // below is phone. 
+$tablet-width: 600px;   // below is phone. 
                         // between is tablet.
 $desktop-width: 1024px; // above is desktop 
 
@@ -64,15 +64,15 @@ $mqBuffer: 1px; // buffer between mq's
 
 $gridcontainer-exists: true;
 
-$debug: true;
+$debug: false;
 
 /*
 Root vars. STANDARD FONTS AND COLORS 
 */
 :root {
-    /* FONTS AND FALLBACKS */
+    // /* FONTS AND FALLBACKS */
     
     
-    /* Calculation */
-    --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 100px) / (1200 - 100))); /* Ranges from 421px to 1199px */
+    // /* Calculation */
+    // --respaonsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 100px) / (1200 - 100))); /* Ranges from 421px to 1199px */
 }

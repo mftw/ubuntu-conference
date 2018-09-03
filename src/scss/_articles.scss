@@ -6,12 +6,10 @@
     padding: 0 0 3vw 0;
     
     .mini-article {
-        @include isGridItem(span 1);
-
         &:first-child {
             grid-row: span 2;
     
-            @include mqp {
+            @include mq-phone {
                 grid-row: span 1;
             }
         }
@@ -35,10 +33,21 @@
 }
 
 .mini-article {
+    @include isGridItem(span 1);
     background: getColor(prim2);
     padding: 1.2vw;
+    text-align: justify;
+    text-justify: newspaper;
+
 
     figure {
+
+        img {
+            min-height: 20vmin;
+            height: 20vh;
+            max-height: 20vmax;
+            object-fit: cover;
+        }
 
         figcaption {
             color: getColor(prim1);
@@ -51,22 +60,37 @@
 
     p {
         color: getColor(tri2);
-        margin: 0;
+        // margin: 1rem 0;
+        margin-bottom: 1rem;
         padding: 0;
+    }
+
+    a {
+        // display: inline-flex;
+        // align-self: flex-end;
+        // align-items: flex-end;
+        // align-content: flex-end;
+        // justify-self: flex-end;
+        // justify-content: flex-end;
+        // justify-items: flex-end;
+        
+        // justify-self: right; 
+        // justify-content:
+        // justify-self: end;
+        position: relative;
+        bottom: 0; 
     }
 }
 
 
 .row {
-    &--grey {
-        background: getColor(tri1);
-    }
-
     &--bg-tech {
+        @extend %row;
         background-color: tint(getColor(tri1), 10%);
         background-image: url(../img/circuit2.svg);
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: 0% / 50%;
     }
 
     &__headline {
