@@ -694,18 +694,32 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column: 2 / 3;
+  grid-auto-flow: dense;
 }
 
 .program .mini-article {
   border: 1px solid black;
 }
 
-.program .mini-article.iot {
+.program .iot {
   grid-column: 1 / span 1;
+  background: #E95420;
 }
 
-.program .mini-article.desktop {
+.program .iot__headline {
+  grid-column: 1 / span 1;
+  grid-row: 1 / 2;
+  text-align: center;
+}
+
+.program .desktop {
   grid-column: 2 / span 1;
+}
+
+.program .desktop__headline {
+  grid-column: 2 / span 1;
+  grid-row: 1 / 2;
+  text-align: center;
 }
 
 /*# sourceMappingURL=maps/style.css.map */
