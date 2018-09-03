@@ -125,9 +125,5 @@
             @include button-prop();
             background: tint(getColor(prim1), 30%);
         }
-
-        &--right {
-
-        }
     }
 }
