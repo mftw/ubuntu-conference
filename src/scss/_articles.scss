@@ -35,7 +35,8 @@
 .mini-article {
     @include isGridItem(span 1);
     background: getColor(prim2);
-    padding: 1.2vw;
+    // padding: 1.2vw;
+    padding: 1rem;
     text-align: justify;
     text-justify: newspaper;
 

@@ -461,7 +461,7 @@ p {
 .mini-article {
   grid-column: span 1;
   background: #FFFFFF;
-  padding: 1.2vw;
+  padding: 1rem;
   text-align: justify;
   text-justify: newspaper;
 }
@@ -688,6 +688,24 @@ p {
     /* PHONE MQ */
     align-self: flex-end;
   }
+}
+
+.program {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 2 / 3;
+}
+
+.program .mini-article {
+  border: 1px solid black;
+}
+
+.program .mini-article.iot {
+  grid-column: 1 / span 1;
+}
+
+.program .mini-article.desktop {
+  grid-column: 2 / span 1;
 }
 
 /*# sourceMappingURL=maps/style.css.map */

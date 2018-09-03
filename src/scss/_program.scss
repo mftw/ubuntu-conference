@@ -1,0 +1,81 @@
+.program {
+    // @include isGridItem('2 / 3');
+    @include isSubGridContainer('2 / 3', null, '1fr 1fr');
+    // grid-column: 2 / 3;
+    // grid-auto-flow: ;
+    // grid-template-areas: 
+    // grid-template-columns: 'iot' 'desktop';
+    // grid-template-columns: 
+    //         "iot desktop"
+    //         "iot desktop"
+    //         "iot desktop"
+    //         "iot desktop"
+    //         "iot desktop";
+            
+    .mini-article {
+        // grid-column: unset;
+        // grid-column: 
+        border: 1px solid black;    
+        &.iot {
+            // @include isGridItem('1 / 2');
+            grid-column: 1 / span 1;
+            // grid-column-start: 1;
+            // grid-column-end: 2;
+            // grid-area: "iot";
+        }
+
+        &.desktop {
+            // @include isGridItem('2 / 3');
+            grid-column: 2 / span 1;
+            // grid-area: "desktop";
+        }
+    }
+}
+
+// .mini-article2 {
+//     // @include isGridItem(span 1);
+//     background: getColor(prim2);
+//     // padding: 1.2vw;
+//     padding: 1rem;
+//     text-align: justify;
+//     text-justify: newspaper;
+
+//     &.iot {
+//         // @include isGridItem('1 / 2');
+//         // grid-column: 1 / span 1;
+//         // grid-column-start: 1;
+//         // grid-column-end: 2;
+//         grid-area: "iot";
+//     }
+//     &.desktop {
+//         // @include isGridItem('2 / 3');
+//         // grid-column: 2 / span 1;
+//         grid-area: "desktop";
+//         background: deepskyblue;
+//     }
+
+//     figure {
+
+//         img {
+//             min-height: 20vmin;
+//             height: 20vh;
+//             max-height: 20vmax;
+//             object-fit: cover;
+//         }
+
+//         figcaption {
+//             color: getColor(prim1);
+//         }
+//     }
+
+//     h2 {
+//         font-weight: 400;
+//     }
+
+//     p {
+//         color: getColor(tri2);
+//         // margin: 1rem 0;
+//         margin-bottom: 1rem;
+//         padding: 0;
+//     }
+// }
