@@ -71,7 +71,7 @@ $mqBuffer: 1px !default;
 /// @author Michael Koch
 @mixin mq-phone {
     @media screen and (max-width: #{$tablet-width - $mqBuffer}) {
-        /* PHONE MQ */
+        // /* PHONE MQ */
       @content;
     }
 }
@@ -90,7 +90,7 @@ $mqBuffer: 1px !default;
 /// @author Michael Koch
 @mixin mq-tablet {
     @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - $mqBuffer}) {
-        /* TABLET MQ */
+        // /* TABLET MQ */
       @content;
     }
   }
@@ -109,7 +109,7 @@ $mqBuffer: 1px !default;
 /// @author Michael Koch
   @mixin mq-desktop {
     @media screen and (min-width: #{$desktop-width}) and (max-width: #{$retina-width - $mqBuffer}) {
-        /* DESKTOP MQ */
+        // /* DESKTOP MQ */
       @content;
     }
   }
@@ -128,7 +128,7 @@ $mqBuffer: 1px !default;
 /// @author Michael Koch
 @mixin mq-retina {
   @media screen and (min-width: #{$retina-width}) {
-      /* RETINA 4k MQ */
+      // /* RETINA 4k MQ */
     @content;
   }
 }

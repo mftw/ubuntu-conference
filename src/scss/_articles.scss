@@ -39,6 +39,7 @@
     padding: 1rem;
     text-align: justify;
     text-justify: newspaper;
+    color: getColor(tri2);
 
 
     figure {
@@ -60,7 +61,7 @@
     }
 
     p {
-        color: getColor(tri2);
+        // color: getColor(tri2);
         // margin: 1rem 0;
         margin-bottom: 1rem;
         padding: 0;
