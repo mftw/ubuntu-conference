@@ -14,7 +14,7 @@ html {
     $max_width: $dekstop-width;
     $min_font: 14px;
     $max_font: 19px;
-    @include fluid-font($min_width, $max_width, $min_font, $max_font);
+    @include fluid-font($min_width, $max_width, $min_font, $max_font);  
     box-sizing: border-box;
     scroll-behavior: smooth;
 
