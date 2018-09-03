@@ -405,10 +405,6 @@ p {
 .hero__button {
   margin-left: 11%;
   background: tomato;
-  display: inline;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 3px;
 }
 
 .articles {
@@ -503,6 +499,14 @@ p {
   font-weight: 300;
 }
 
+@font-face {
+  font-family: 'icons';
+  src: url("../font/icons.eot?52569734");
+  src: url("../font/icons.eot?52569734#iefix") format("embedded-opentype"), url("../font/icons.woff?52569734") format("woff"), url("../font/icons.ttf?52569734") format("truetype"), url("../font/icons.svg?52569734#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .footer {
   padding: 40px 0;
 }
@@ -513,6 +517,18 @@ p {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+}
+
+.footer__menu-nav li a {
+  font-size: 90%;
+}
+
+.footer__menu-nav li a:nth-child(1) {
+  border-color: #E95420;
+}
+
+.footer__menu-nav li a:nth-child(1) a {
+  line-height: 100%;
 }
 
 .footer__menu ul {
@@ -533,6 +549,8 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-weight: 300;
+  font-size: 90%;
 }
 
 .footer__submenu ul {
@@ -543,6 +561,30 @@ p {
 .footer__submenu ul li a {
   line-height: 100%;
   margin: 0 16px;
+}
+
+.icons {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  opacity: .8;
+  font-size: 140%;
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
 }
 
 .iot-desktop {
@@ -725,18 +767,12 @@ p {
 
 .tilmelding .tilmeld label {
   padding: 4px 8px;
-  color: #333333;
+  opacity: .7;
 }
 
 .tilmelding .tilmeld input[type=submit] {
-  width: 100%;
   background-color: tomato;
-  color: white;
-  padding: 14px 20px;
-  margin: 24px 0 0 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  margin: 16px 0 0 0;
 }
 
 .tilmelding .tilmeld .dage {
@@ -775,6 +811,31 @@ p {
   transform: scale(1);
   border-radius: 4px;
   opacity: 1;
+}
+
+.hero__button, .tilmelding .tilmeld input[type=submit] {
+  display: inline-block;
+  text-align: center;
+  padding: calc(8px + 0.1vw) calc(16px + 0.5vw);
+  color: white !important;
+  border-radius: calc(3px + 0.1vw);
+  cursor: pointer;
+  border: none;
+  letter-spacing: 1px;
+  text-decoration: none;
+  outline: none;
+  font-weight: 300;
+}
+
+.footer__menu-nav li a {
+  display: inline-block;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-weight: 300;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=maps/style.css.map */

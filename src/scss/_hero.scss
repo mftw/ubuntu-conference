@@ -26,11 +26,8 @@
             max-width: 40%;
         }
         &__button {
+            @extend %button;
             margin-left: 11%;
             background: tomato;
-            display: inline;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 3px;
         }
 }

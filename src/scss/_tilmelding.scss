@@ -1,3 +1,14 @@
+// %button {
+//     display: inline-block;
+//     text-align: center;
+//     padding: calc(8px + 0.3vw) calc(16px + 0.5vw);
+//     color: white;
+//     border-radius: calc(3px + 0.1vw);
+//     cursor: pointer;
+//     border: 1px solid rgba(0,0,0,.05);
+//     letter-spacing: 1px;
+// }
+
 .tilmelding {
     padding: 32px;
     margin: auto;
@@ -51,14 +62,9 @@
         }
 
         input[type=submit] {
-            width: 100%;
+            @extend %button;
             background-color: tomato;
-            color: white;
-            padding: 14px 20px;
-            margin: 24px 0 0 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            margin: 16px 0 0 0;
         }
 
         .dage {
