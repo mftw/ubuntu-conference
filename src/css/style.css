@@ -431,11 +431,6 @@ p {
   padding: 0;
 }
 
-.mini-article a {
-  position: relative;
-  bottom: 0;
-}
-
 .row--bg-tech {
   background-color: #f7f6f5;
   background-image: url(../img/circuit2.svg);
