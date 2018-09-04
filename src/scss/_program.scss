@@ -14,6 +14,7 @@
     // grid-column: 2 / 3;
     grid-auto-flow: dense;
     gap: 3vw;
+    padding-bottom: 6vw;
 
     .mini-article {
         figure {
@@ -24,24 +25,6 @@
                 max-height: 25vmax;
                 object-fit: cover;
             }
-        }
-    }
-
-    @include mq-phone {
-        & > *:nth-child(3){
-            margin-top: 6vw;
-        }
-        & > *:last-child {
-            margin-bottom: 6vw;
-        }
-    }
-    
-    @include mq-tablet {
-        & > *:nth-child(3){
-            margin-top: 6vw;
-        }
-        & > *:last-child {
-            margin-bottom: 6vw;
         }
     }
 

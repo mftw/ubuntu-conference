@@ -916,6 +916,7 @@ p {
   grid-column: 2 / 3;
   grid-auto-flow: dense;
   gap: 3vw;
+  padding-bottom: 6vw;
 }
 
 .program .mini-article figure img {
@@ -923,30 +924,6 @@ p {
   height: 25vh;
   max-height: 25vmax;
   object-fit: cover;
-}
-
-@media screen and (max-width: 599px) {
-  .program {
-    /* PHONE MQ */
-  }
-  .program > *:nth-child(3) {
-    margin-top: 6vw;
-  }
-  .program > *:last-child {
-    margin-bottom: 6vw;
-  }
-}
-
-@media screen and (min-width: 600px) and (max-width: 1023px) {
-  .program {
-    /* TABLET MQ */
-  }
-  .program > *:nth-child(3) {
-    margin-top: 6vw;
-  }
-  .program > *:last-child {
-    margin-bottom: 6vw;
-  }
 }
 
 .program__iot {

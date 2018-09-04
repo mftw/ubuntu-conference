@@ -46,11 +46,11 @@
           </nav>
         </div>
         <section class="hero">
-          <h1 class="hero__title">UbuntuCon Aalborg</h1>
-          <p class="hero__subtitle">Kom til Ubuntu' fedeste Con, stedet med alle damerne.<br>
-          Vi lover dig en uge du sent vil glemme!</p>
-          <a href="#" class="hero__button" id="show-tilmeld">klik her</a>
-        </section>
+            <h1 class="hero__title">UbuntuCon Aalborg</h1>
+            <p class="hero__subtitle">Kom til Ubuntu' fedeste Con, stedet med alle damerne.<br>
+            Vi lover dig en uge du sent vil glemme!</p>
+            <a href="#" class="hero__button" id="show-tilmeld">klik her</a>
+          </section>
       </header>
 
 <div class="row">
@@ -260,6 +260,40 @@
       </ul>
     </section>
   </footer>
+
+  <section class="tilmelding">
+    <div class="close-tilmeld" id="close-tilmeld">X</div>
+    <h3>Tilmelding</h3>
+    <form action="tilmeld" class="tilmeld">
+      <label for="name">Dit fulde navn</label>
+      <input type="text" id="name">
+      <label for="adresse">Din adresse</label>
+      <input type="text" id="adresse">
+      <label for="land">Dit hjemland</label>
+      <input type="text" id="land">
+      <label for="email">Din adresse</label>
+      <input type="text" id="email">
+      <label for="interesse">Hoved interesse</label>
+      <select id="interesse" name="interesse">
+        <option value="" disabled selected>(pil ned)</option>
+        <option value="iot">ioT</option>
+        <option value="desktop">Desktop</option>
+      </select>
+      <div class="dage">
+        <label>Hvilke dage</label>
+        <label><input type="checkbox" name="dage" value="mandag"><span>Mandag</span></label>
+        <label><input type="checkbox" name="dage" value="tirsdag"><span>Tirsdag</span></label>
+        <label><input type="checkbox" name="dage" value="onsdag"><span>Onsdag</span></label>
+        <label><input type="checkbox" name="dage" value="torsdag"><span>Torsdag</span></label>
+        <label><input type="checkbox" name="dage" value="fredag"><span>Fredag</span></label>
+        <label><input type="checkbox" name="dage" value="lørdag"><span>Lørdag</span></label>
+        <label><input type="checkbox" name="dage" value="søndag"><span>Søndag</span></label>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+
+
+  </section>
 
 <script src="js/nav.js"></script>
 
