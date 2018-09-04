@@ -23,7 +23,8 @@
         }
         &__subtitle {
             color: rgba(255,255,255,.7);
-            margin: 8px 0 16px 0;
+            // margin: 8px 0 16px 0;
+            margin: px2rem(8px) 0 px2rem(16px) 0;
             margin-left: 11%;
             max-width: 40%;
             font-size: 90%;

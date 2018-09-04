@@ -1,13 +1,15 @@
 %button {
     display: inline-block;
     text-align: center;
-    padding: calc(8px + 0.1vw) calc(16px + 0.5vw);
+    // padding: calc(8px + 0.1vw) calc(16px + 0.5vw);
+    padding: px2rem(8px) px2rem(16px);
     color: white !important;
-    border-radius: calc(3px + 0.1vw);
+    // border-radius: calc(3px + 0.1vw);
+    border-radius: px2rem(3px);
     cursor: pointer;
     // border: 1px solid rgba(0,0,0,.3);
     border: none;
-    letter-spacing: 1px;
+    letter-spacing: px2rem(1);
     text-decoration: none;
     outline: none;
     font-weight: 300;
@@ -16,15 +18,23 @@
 %button-outline {
     display: inline-block;
     text-align: center;
-    padding: 8px 16px;
+    // padding: 8px 16px;
+    padding: px2rem(8px) px2rem(16px);
     // padding: calc(8px + 0.1vw) calc(16px + 0.5vw);
     // border-radius: calc(3px + 0.1vw);
-    border-radius: 3px;
+    // border-radius: 3px;
+    border-radius: px2rem(3px);
     cursor: pointer;
-    border: 1px solid rgba(0,0,0,.4);
+    // border: 1px solid rgba(0,0,0,.4);
+    border: px2rem(1px) solid rgba(0,0,0,.4);
     font-weight: 300;
     // opacity: .6;
     // border: none;
     // letter-spacing: 1px;
     text-decoration: none;
+}
+
+%row {
+    @include isGridContainer('minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr)');
+    width: 100%;
 }
