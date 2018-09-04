@@ -1,58 +1,134 @@
+@font-face {
+    font-family: 'icons';
+    src: url('../font/icons.eot?52569734');
+    src: url('../font/icons.eot?52569734#iefix') format('embedded-opentype'),
+        url('../font/icons.woff?52569734') format('woff'),
+        url('../font/icons.ttf?52569734') format('truetype'),
+        url('../font/icons.svg?52569734#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .footer {
-    display: grid;
-    grid-gap: 24px;
-    grid-template-rows: auto auto;
-    padding: 16px 0;
+    border-top: 1px solid rgba(0,0,0,.2);
+    // display: grid;
+    // grid-gap: 24px;
+    // grid-template-rows: auto auto;
+    padding: 40px 0;
 
     &__menu {
-        display: flex;
+        // display: flex;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 16px;
         justify-content: space-between;
-        // justify-items: center;
-        // align-items: center;
-        // align-content: center;
-        background: black;
+        padding: auto 16px;
         margin: 0 auto;
         width: 100%;
+        box-sizing: border-box;
         max-width: 1200px;
         @include mq-phone {
-            flex-basis: 100%;
-            
+            grid-template-columns: 1fr;
         }
 
+        &-nav li {
+            display: flex;
+        a {
+            @extend %button-outline;
+            font-size: 90%;
+
+
+                // background: $tc-ubuntu-orange;
+
+                a {
+                    // color: white;
+                    line-height: 100%;
+                }
+        }
+    }
+
         ul {
-            display: grid;
-            grid-auto-flow: column;
-            grid-gap: 16px;
+            display: flex;
+            // display: grid;
+            // grid-template-columns: repeat(4, 1fr);
+            // grid-gap: 16px;
+            justify-content: center;
+
+            // grid-template-columns: auto 1fr auto;
+            // grid-gap: 16px;
             padding: 0;
             margin: 0;
+            // @include mq-phone {
+            //     grid-template-columns: 1fr;
+            // }
 
-            
             li {
+                padding: 0 16px;
+                
                 a {
-                    padding: 8px 16px;
-                    line-height: 100%;
+                    // padding: 8px 16px;
+                    // line-height: 100%;
                 }
             }
         }
     }
+
     &__submenu {
+        margin: 40px 0 0 0;
         display: flex;
         flex-direction: column;
-        align-content: center;
-        justify-items: center;
         align-items: center;
+        font-weight: 300;
+        font-size: 90%;
+        div {
+            padding: 0 16px;
+            opacity: .7;
+            text-align: center;
+        }
+
         ul {
             display: flex;
-            padding: 8px 0 0 0;
             flex-wrap: wrap;
+            padding: 8px 0 0 0;
+
+
+            // flex-wrap: wrap;
             li {
-                
                 a {
                     line-height: 100%;
                     margin: 0 16px;
                 }
             }
         }
-
     }
+}
+#buttonfuck {
+    border-color: $tc-ubuntu-orange;
+}
+
+.icons {
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    opacity: .8;
+    font-size: 140%;
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+    /* fix buttons height, for twitter bootstrap */
+    //   line-height: 1em;
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    //   margin-left: .2em;
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Uncomment for 3D effect */
+    // text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
 }

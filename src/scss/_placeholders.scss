@@ -1,0 +1,30 @@
+%button {
+    display: inline-block;
+    text-align: center;
+    padding: calc(8px + 0.1vw) calc(16px + 0.5vw);
+    color: white !important;
+    border-radius: calc(3px + 0.1vw);
+    cursor: pointer;
+    // border: 1px solid rgba(0,0,0,.3);
+    border: none;
+    letter-spacing: 1px;
+    text-decoration: none;
+    outline: none;
+    font-weight: 300;
+    // box-shadow: 0px 2px 5px 2px rgba(0,0,0,.1);
+}
+%button-outline {
+    display: inline-block;
+    text-align: center;
+    padding: 8px 16px;
+    // padding: calc(8px + 0.1vw) calc(16px + 0.5vw);
+    // border-radius: calc(3px + 0.1vw);
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,.4);
+    font-weight: 300;
+    // opacity: .6;
+    // border: none;
+    // letter-spacing: 1px;
+    text-decoration: none;
+}
