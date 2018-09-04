@@ -56,6 +56,16 @@ gulp.task('serve', ['sass'], function() {
     gulp.watch("src/*.html").on('change', browserSync.reload);
 });
 
+// Watch Sass-prod & Serve
+gulp.task('serve-prod', ['sass-prod'], function() {
+    browserSync.init({
+        server: "./src" 
+    });
+
+    gulp.watch(['src/scss/**/*.scss'], ['sass-prod']);
+    gulp.watch("src/*.html").on('change', browserSync.reload);
+});
+
 // Watch Sass & Serve
 gulp.task('compile', ['sass'], function() {
     gulp.watch(['src/scss/**/*.scss'], ['sass']);
