@@ -10,45 +10,64 @@
 }
 
 .footer {
+    border-top: 1px solid rgba(0,0,0,.2);
     // display: grid;
     // grid-gap: 24px;
     // grid-template-rows: auto auto;
     padding: 40px 0;
 
     &__menu {
-        display: flex;
+        // display: flex;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 16px;
         justify-content: space-between;
-        margin: auto 16px;
-        width: 90%;
+        padding: auto 16px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
         max-width: 1200px;
+        @include mq-phone {
+            grid-template-columns: 1fr;
+        }
 
-        &-nav li a {
+        &-nav li {
+            display: flex;
+        a {
             @extend %button-outline;
             font-size: 90%;
 
 
-            &:nth-child(1) {
                 // background: $tc-ubuntu-orange;
-                border-color: $tc-ubuntu-orange;
 
                 a {
                     // color: white;
                     line-height: 100%;
                 }
-            }
         }
+    }
 
         ul {
-            display: grid;
-            grid-auto-flow: column;
-            grid-gap: 16px;
+            display: flex;
+            // display: grid;
+            // grid-template-columns: repeat(4, 1fr);
+            // grid-gap: 16px;
+            justify-content: center;
+
+            // grid-template-columns: auto 1fr auto;
+            // grid-gap: 16px;
             padding: 0;
             margin: 0;
+            // @include mq-phone {
+            //     grid-template-columns: 1fr;
+            // }
 
             li {
+                padding: 0 16px;
+                
                 a {
-                    padding: 8px 16px;
-                    line-height: 100%;
+                    // padding: 8px 16px;
+                    // line-height: 100%;
                 }
             }
         }
@@ -61,10 +80,17 @@
         align-items: center;
         font-weight: 300;
         font-size: 90%;
+        div {
+            padding: 0 16px;
+            opacity: .7;
+            text-align: center;
+        }
 
         ul {
             display: flex;
+            flex-wrap: wrap;
             padding: 8px 0 0 0;
+
 
             // flex-wrap: wrap;
             li {
@@ -75,6 +101,9 @@
             }
         }
     }
+}
+#buttonfuck {
+    border-color: $tc-ubuntu-orange;
 }
 
 .icons {

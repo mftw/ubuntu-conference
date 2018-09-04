@@ -65,7 +65,7 @@ $nav-height: 100px !default;
                 li {
                     // height: $nav-height / 2;
                     height: auto;
-                    line-height: $nav-height / 1.7;
+                    line-height: $nav-height / 2;
                 }
             }
 
@@ -85,7 +85,8 @@ $nav-height: 100px !default;
             }
 
                 @include mq-phone {
-                    line-height: $nav-height / 1.7;
+                    // line-height: $nav-height / 1.7;
+                    line-height: 100%;
                 }
             }
         }

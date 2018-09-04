@@ -359,7 +359,7 @@ p {
   }
   .nav-wrapper .nav__bar li {
     height: auto;
-    line-height: 58.82353px;
+    line-height: 50px;
   }
 }
 
@@ -385,7 +385,7 @@ p {
 @media screen and (max-width: 599px) {
   .nav-wrapper .nav__bar a {
     /* PHONE MQ */
-    line-height: 58.82353px;
+    line-height: 100%;
   }
 }
 
@@ -430,14 +430,17 @@ p {
 
 .hero__title {
   color: white;
-  margin-left: 10%;
+  margin: 0;
+  margin-left: 11%;
   max-width: 40%;
 }
 
 .hero__subtitle {
   color: rgba(255, 255, 255, 0.7);
+  margin: 8px 0 16px 0;
   margin-left: 11%;
   max-width: 40%;
+  font-size: 90%;
 }
 
 .hero__button {
@@ -546,40 +549,50 @@ p {
 }
 
 .footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   padding: 40px 0;
 }
 
 .footer__menu {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 16px;
   justify-content: space-between;
-  margin: auto 16px;
-  width: 90%;
+  padding: auto 16px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   max-width: 1200px;
+}
+
+@media screen and (max-width: 599px) {
+  .footer__menu {
+    /* PHONE MQ */
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer__menu-nav li {
+  display: flex;
 }
 
 .footer__menu-nav li a {
   font-size: 90%;
 }
 
-.footer__menu-nav li a:nth-child(1) {
-  border-color: #E95420;
-}
-
-.footer__menu-nav li a:nth-child(1) a {
+.footer__menu-nav li a a {
   line-height: 100%;
 }
 
 .footer__menu ul {
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 16px;
+  display: flex;
+  justify-content: center;
   padding: 0;
   margin: 0;
 }
 
-.footer__menu ul li a {
-  padding: 8px 16px;
-  line-height: 100%;
+.footer__menu ul li {
+  padding: 0 16px;
 }
 
 .footer__submenu {
@@ -591,14 +604,25 @@ p {
   font-size: 90%;
 }
 
+.footer__submenu div {
+  padding: 0 16px;
+  opacity: .7;
+  text-align: center;
+}
+
 .footer__submenu ul {
   display: flex;
+  flex-wrap: wrap;
   padding: 8px 0 0 0;
 }
 
 .footer__submenu ul li a {
   line-height: 100%;
   margin: 0 16px;
+}
+
+#buttonfuck {
+  border-color: #E95420;
 }
 
 .icons {

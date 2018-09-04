@@ -17,13 +17,16 @@
 
         &__title {
             color: white;
-            margin-left: 10%;
+            margin: 0;
+            margin-left: 11%;
             max-width: 40%;
         }
         &__subtitle {
             color: rgba(255,255,255,.7);
+            margin: 8px 0 16px 0;
             margin-left: 11%;
             max-width: 40%;
+            font-size: 90%;
         }
         &__button {
             @extend %button;
