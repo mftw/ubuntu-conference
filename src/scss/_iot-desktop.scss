@@ -104,10 +104,13 @@
     &__button {
         @mixin button-prop {
             display: block;
-            width: 30%;
+            // width: 30%;
             text-align: center;
             align-self: center;
             margin: 1rem;
+            @extend %button !optional;
+            
+            background: steelblue;
 
             @include mq-phone {
                 align-self: flex-end;
@@ -118,12 +121,12 @@
 
         &--tc-sec1 {
             @include button-prop();
-            background: tint(getColor(sec1), 30%);
+            // background: tint(getColor(prim1), 30%);
         }
 
         &--tc-prim1 {
             @include button-prop();
-            background: tint(getColor(prim1), 30%);
+            // background: tint(getColor(prim1), 30%);
         }
     }
 }
