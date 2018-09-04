@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 1200px;
     height: 70vh;
-    background: url(../img/herogreyscale.png), 
+    background: url(../img/hero.png), 
     no-repeat linear-gradient(160deg, rgba(119, 33, 111, 0.7) 0%, rgba(233, 84, 32, 0.7) 100%), 
     no-repeat linear-gradient(150deg, rgba(119, 33, 111, 1) 15%, rgba(233, 84, 32, 1) 70%, rgba(233, 84, 32, 1) 100%);
     background-repeat: no-repeat;
@@ -17,20 +17,20 @@
 
         &__title {
             color: white;
-            margin-left: 10%;
+            margin: 0;
+            margin-left: 11%;
             max-width: 40%;
         }
         &__subtitle {
             color: rgba(255,255,255,.7);
+            margin: 8px 0 16px 0;
             margin-left: 11%;
             max-width: 40%;
+            font-size: 90%;
         }
         &__button {
+            @extend %button;
             margin-left: 11%;
             background: tomato;
-            display: inline;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 3px;
         }
 }

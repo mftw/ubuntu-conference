@@ -1,7 +1,18 @@
 $nav-height: 100px !default;
 
+.top-nav {
+    background: $tc-black;
+    height: 20px;
+    span {
+        max-width: 1200px;
+        font-size: 70%;
+        line-height: 100%;
+        margin: auto;
+        background: white;
+    }
+}
 .nav-wrapper {
-    background: darkslategrey;
+    background: $tc-cool-grey;
     width: 100%;
     line-height: $nav-height;
     // position: fixed;
@@ -10,7 +21,7 @@ $nav-height: 100px !default;
         height: $nav-height / 1.5;
     }
 
-    nav {
+    .nav {
         position: relative;
         display: flex;
         max-width: 1200px;
@@ -20,21 +31,30 @@ $nav-height: 100px !default;
             justify-content: space-between;
         }
 
-        .logo {
-            line-height: $nav-height;
+        &__logo {
+            height: $nav-height + 4px;
+            img {
+                height: $nav-height + 4px;
+                object-fit: contain;
+                margin: 0;
+            }
 
             @include mq-phone {
-                line-height: $nav-height / 1.5;
+                height: $nav-height / 1.5;
+                img {
+                    height: $nav-height / 1.5;
+                }
             }
         }
 
-        .navbar {
+        &__bar {
             display: flex;
+            color: white;
 
             @include mq-phone {
                 position: absolute;
                 flex-direction: column;
-                background: grey;
+                background: $tc-black;
                 width: 100%;
                 top: $nav-height / 1.5;
                 left: -100%;
@@ -45,17 +65,28 @@ $nav-height: 100px !default;
                 li {
                     // height: $nav-height / 2;
                     height: auto;
-                    line-height: $nav-height / 1.7;
+                    line-height: $nav-height / 2;
                 }
             }
 
             a {
                 display: inline-block;
                 line-height: $nav-height;
-                padding: 0 8px;
+                padding: 0 16px;
+                color: white;
+                @include mq-desktop {
+                transition: 500ms;
+                border-bottom: 4px solid $tc-cool-grey;
+                &:hover {
+                    // background: $tc-ubuntu-orange;
+                    transition: 100ms;
+                    border-bottom: 4px solid $tc-ubuntu-orange;
+                }
+            }
 
                 @include mq-phone {
-                    line-height: $nav-height / 1.7;
+                    // line-height: $nav-height / 1.7;
+                    line-height: 100%;
                 }
             }
         }
@@ -63,7 +94,7 @@ $nav-height: 100px !default;
 }
 
 .toggle-menu {
-    .navbar {
+    .nav__bar {
         transform: translateX(100%);
     }
     .mobile-menu {
@@ -72,10 +103,12 @@ $nav-height: 100px !default;
 }
 
 .mobile-menu {
-    padding-right: 16px;
+    padding: 0 24px;
     display: none;
     line-height: $nav-height / 1.5;
     cursor: pointer;
+    color: white;
+    background: rgba(255,255,255,.1);
 
     @include mq-phone {
         display: inline-block;
