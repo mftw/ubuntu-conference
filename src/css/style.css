@@ -175,6 +175,46 @@ template {
   display: none;
 }
 
+.hero__button, .card__button, .card__button--tc-sec1, .card__button--tc-prim1, .tilmelding .tilmeld input[type=submit] {
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  color: white !important;
+  border-radius: 0.1875rem;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.0625rem;
+  text-decoration: none;
+  outline: none;
+  font-weight: 300;
+}
+
+.footer__menu-nav li a {
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.1875rem;
+  cursor: pointer;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.4);
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.row, .row--bg-tech {
+  display: grid;
+  grid-template-columns: minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.row *, .row--bg-tech *,
+.row *::before,
+.row--bg-tech *::before,
+.row *::after,
+.row--bg-tech *::after {
+  box-sizing: border-box;
+}
+
 /*
 Root vars. STANDARD FONTS AND COLORS 
 */
@@ -245,7 +285,6 @@ a:not(:hover) {
 
 a:hover {
   color: #111111;
-  text-decoration-color: #111111;
 }
 
 code {
@@ -269,14 +308,8 @@ figure img {
 }
 
 p {
-  font-weight: 400;
+  font-weight: 300;
   color: #111111;
-}
-
-.row, .row--bg-tech {
-  display: grid;
-  grid-template-columns: minmax(3vw, 1fr) minmax(auto, 1200px) minmax(3vw, 1fr);
-  width: 100%;
 }
 
 .top-nav {
@@ -441,7 +474,7 @@ p {
 
 .hero__subtitle {
   color: rgba(255, 255, 255, 0.7);
-  margin: 8px 0 16px 0;
+  margin: 0.5rem 0 1rem 0;
   margin-left: 11%;
   max-width: 40%;
   font-size: 90%;
@@ -553,16 +586,16 @@ p {
 }
 
 .footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 40px 0;
+  border-top: 0.0625rem solid rgba(0, 0, 0, 0.2);
+  padding: 2.5rem 0;
 }
 
 .footer__menu {
   display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 16px;
+  grid-gap: 1rem;
   justify-content: space-between;
-  padding: auto 16px;
+  padding: auto 1rem;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
@@ -596,11 +629,11 @@ p {
 }
 
 .footer__menu ul li {
-  padding: 0 16px;
+  padding: 0 1rem;
 }
 
 .footer__submenu {
-  margin: 40px 0 0 0;
+  margin: 2.5rem 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -609,7 +642,7 @@ p {
 }
 
 .footer__submenu div {
-  padding: 0 16px;
+  padding: 0 1rem;
   opacity: .7;
   text-align: center;
 }
@@ -617,12 +650,12 @@ p {
 .footer__submenu ul {
   display: flex;
   flex-wrap: wrap;
-  padding: 8px 0 0 0;
+  padding: 0.5rem 0 0 0;
 }
 
 .footer__submenu ul li a {
   line-height: 100%;
-  margin: 0 16px;
+  margin: 0 1rem;
 }
 
 #buttonfuck {
@@ -740,10 +773,10 @@ p {
 
 .card__button {
   display: block;
-  width: 30%;
   text-align: center;
   align-self: center;
   margin: 1rem;
+  background: steelblue;
 }
 
 @media screen and (max-width: 599px) {
@@ -755,11 +788,10 @@ p {
 
 .card__button--tc-sec1 {
   display: block;
-  width: 30%;
   text-align: center;
   align-self: center;
   margin: 1rem;
-  background: #d6bcd4;
+  background: steelblue;
 }
 
 @media screen and (max-width: 599px) {
@@ -771,11 +803,10 @@ p {
 
 .card__button--tc-prim1 {
   display: block;
-  width: 30%;
   text-align: center;
   align-self: center;
   margin: 1rem;
-  background: #f8ccbc;
+  background: steelblue;
 }
 
 @media screen and (max-width: 599px) {
@@ -786,10 +817,10 @@ p {
 }
 
 .tilmelding {
-  padding: 32px;
+  padding: 2rem;
   margin: auto;
   width: 90%;
-  max-width: 450px;
+  max-width: 28.125rem;
   position: absolute;
   z-index: 8;
   top: 100px;
@@ -804,15 +835,15 @@ p {
 
 .tilmelding .close-tilmeld {
   position: absolute;
-  top: 10px;
-  right: 14px;
+  top: 0.625rem;
+  right: 0.875rem;
   font-size: 120%;
   cursor: pointer;
 }
 
 .tilmelding h3 {
   text-align: center;
-  margin: 0 0 16px 0;
+  margin: 0 0 1rem 0;
   letter-spacing: 2px;
 }
 
@@ -824,34 +855,34 @@ p {
 .tilmelding .tilmeld input[type=text],
 .tilmelding .tilmeld select {
   width: 100%;
-  padding: 8px 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.25rem;
   box-sizing: border-box;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 .tilmelding .tilmeld label {
-  padding: 4px 8px;
+  padding: 0.25rem 0.5rem;
   opacity: .7;
 }
 
 .tilmelding .tilmeld input[type=submit] {
   background-color: tomato;
-  margin: 16px 0 0 0;
+  margin: 1rem 0 0 0;
 }
 
 .tilmelding .tilmeld .dage {
   display: grid;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
 }
 
 .tilmelding .tilmeld .dage label:not(:first-of-type) {
   background: white;
   line-height: 100%;
-  border: 1px solid #ccc;
-  padding: 8px;
-  border-radius: 4px;
+  border: 0.0625rem solid #ccc;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
   display: inline-block;
 }
 
@@ -860,7 +891,7 @@ p {
 }
 
 .tilmelding .tilmeld .dage label:not(:first-of-type) input[type=checkbox] {
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 
 .tilmelding .tilmeld .dage label:not(:first-of-type) input[type=checkbox]:checked + span {
@@ -875,33 +906,173 @@ p {
 
 .toggle-tilmeld .tilmelding {
   transform: scale(1);
-  border-radius: 4px;
+  border-radius: 0.25rem;
   opacity: 1;
 }
 
-.hero__button, .tilmelding .tilmeld input[type=submit] {
-  display: inline-block;
-  text-align: center;
-  padding: calc(8px + 0.1vw) calc(16px + 0.5vw);
-  color: white !important;
-  border-radius: calc(3px + 0.1vw);
-  cursor: pointer;
-  border: none;
-  letter-spacing: 1px;
-  text-decoration: none;
-  outline: none;
-  font-weight: 300;
+.program {
+  display: grid;
+  grid-template-columns: 0px 1fr 1fr 0px;
+  grid-column: 2 / 3;
+  grid-auto-flow: dense;
+  gap: 3vw;
 }
 
-.footer__menu-nav li a {
-  display: inline-block;
+.program .mini-article figure img {
+  min-height: 25vmin;
+  height: 25vh;
+  max-height: 25vmax;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 599px) {
+  .program {
+    /* PHONE MQ */
+  }
+  .program > *:nth-child(3) {
+    margin-top: 6vw;
+  }
+  .program > *:last-child {
+    margin-bottom: 6vw;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .program {
+    /* TABLET MQ */
+  }
+  .program > *:nth-child(3) {
+    margin-top: 6vw;
+  }
+  .program > *:last-child {
+    margin-bottom: 6vw;
+  }
+}
+
+.program__iot {
+  grid-column: 2 / span 1;
+  background: #f08763;
+}
+
+.program__iot {
+  color: #e6e6e6;
+}
+
+.program__iot figure figcaption {
+  color: #e6e6e6;
+}
+
+.program__iot a {
+  color: #e6e6e6;
+}
+
+.program__iot a:hover {
+  text-decoration-color: #e6e6e6;
+}
+
+.program__iot__headline {
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 3vw 0 0 0;
+  padding: 0;
   text-align: center;
-  padding: 8px 16px;
-  border-radius: 3px;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  font-weight: 300;
-  text-decoration: none;
+  color: #262626;
+}
+
+@media screen and (max-width: 599px) {
+  .program__iot__headline {
+    /* PHONE MQ */
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .program__iot__headline {
+    /* TABLET MQ */
+    display: none;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .program__iot {
+    /* PHONE MQ */
+    grid-column: 2 / 4;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .program__iot {
+    /* TABLET MQ */
+    grid-column: 2 / 4;
+  }
+}
+
+.program__iot__headline {
+  grid-column: 2 / span 1;
+  grid-row: 1 / 2;
+}
+
+.program__desktop {
+  grid-column: 3 / span 1;
+  background: #a0649a;
+}
+
+.program__desktop {
+  color: #e6e6e6;
+}
+
+.program__desktop figure figcaption {
+  color: #e6e6e6;
+}
+
+.program__desktop a {
+  color: #e6e6e6;
+}
+
+.program__desktop a:hover {
+  text-decoration-color: #e6e6e6;
+}
+
+.program__desktop__headline {
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 3vw 0 0 0;
+  padding: 0;
+  text-align: center;
+  color: #262626;
+}
+
+@media screen and (max-width: 599px) {
+  .program__desktop__headline {
+    /* PHONE MQ */
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .program__desktop__headline {
+    /* TABLET MQ */
+    display: none;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .program__desktop {
+    /* PHONE MQ */
+    grid-column: 2 / 4;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .program__desktop {
+    /* TABLET MQ */
+    grid-column: 2 / 4;
+  }
+}
+
+.program__desktop__headline {
+  grid-column: 3 / span 1;
+  grid-row: 1 / 2;
 }
 
 /*# sourceMappingURL=maps/style.css.map */
