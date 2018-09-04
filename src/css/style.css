@@ -370,9 +370,9 @@ p {
   color: white;
 }
 
-@media screen and (min-width: 600px) and (max-width: 1023px) {
+@media screen and (min-width: 1024px) and (max-width: 2099px) {
   .nav-wrapper .nav__bar a {
-    /* TABLET MQ */
+    /* DESKTOP MQ */
     transition: 500ms;
     border-bottom: 4px solid #333333;
   }

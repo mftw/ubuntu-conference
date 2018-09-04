@@ -74,7 +74,7 @@ $nav-height: 100px !default;
                 line-height: $nav-height;
                 padding: 0 16px;
                 color: white;
-                @include mq-tablet {
+                @include mq-desktop {
                 transition: 500ms;
                 border-bottom: 4px solid $tc-cool-grey;
                 &:hover {
