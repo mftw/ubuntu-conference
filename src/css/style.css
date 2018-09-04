@@ -179,6 +179,7 @@ template {
 Root vars. STANDARD FONTS AND COLORS 
 */
 html {
+  line-height: 1.4;
   box-sizing: border-box;
   scroll-behavior: smooth;
   user-zoom: fixed;
@@ -269,7 +270,7 @@ figure img {
 }
 
 p {
-  font-weight: 400;
+  font-weight: 300;
   color: #111111;
 }
 
@@ -451,6 +452,7 @@ p {
 .mini-article {
   grid-column: span 1;
   background: #FFFFFF;
+  font-weight: 300;
   padding: 1rem;
   text-align: justify;
   text-justify: newspaper;
@@ -473,6 +475,7 @@ p {
 }
 
 .mini-article p {
+  font-weight: 300;
   margin-bottom: 1rem;
   padding: 0;
 }
@@ -743,6 +746,7 @@ p {
 
 .program__iot__headline {
   font-size: 3rem;
+  font-weight: 400;
   margin: 3vw 0 0 0;
   padding: 0;
   text-align: center;
@@ -776,7 +780,6 @@ p {
 .program__iot__headline {
   grid-column: 2 / span 1;
   grid-row: 1 / 2;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ed764d 50%, rgba(255, 255, 255, 0) 100%);
 }
 
 .program__desktop {
@@ -802,6 +805,7 @@ p {
 
 .program__desktop__headline {
   font-size: 3rem;
+  font-weight: 400;
   margin: 3vw 0 0 0;
   padding: 0;
   text-align: center;
@@ -835,7 +839,6 @@ p {
 .program__desktop__headline {
   grid-column: 3 / span 1;
   grid-row: 1 / 2;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #924d8c 50%, rgba(255, 255, 255, 0) 100%);
 }
 
 /*# sourceMappingURL=maps/style.css.map */

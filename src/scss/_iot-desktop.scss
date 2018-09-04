@@ -1,12 +1,11 @@
-
-
 ////
 /// This is a poster comment.
 /// It will apply annotations to all items from file.
-/// @author Michael Koch
-/// @group iot-desktop
+/// @group iot-desktop class
 ////
+//
 
+/// container for the cards
 .iot-desktop {
     @include isGridItem('2 / 3');
     display: flex;
@@ -35,6 +34,7 @@
     max-width: $size; 
 }
 
+/// card to put into the iot-desktop container
 .card {
     @include squareElement(28vw);
     position: relative;
@@ -64,6 +64,8 @@
         border: 1px solid black;
     }
 
+    /// modifier to the card class.
+    /// Aligns all the text to the right.
     &--txt-right {
         @extend .card;
         text-align: right;
@@ -75,6 +77,8 @@
         }
     }
 
+    /// modifier to the card class.
+    /// gives the background to iot cards.
     &--bg-iot {
         @extend .card;
         background: tint(getColor(prim1), 93%);
@@ -90,6 +94,8 @@
         }
     }
 
+    /// modifier to the card class.
+    /// gives the background to desktop cards.
     &--bg-dekstop {
         @extend .card;
         background: tint(getColor(sec2), 93%);
@@ -104,18 +110,24 @@
         }
     }
     
+    /// title element of the card class.
+    /// aligns headlines to the right;
     &__title--right {
         text-align: right;
         align-self: flex-end;
     }
 
+    /// button element of the card class
     &__button {
+
+        /// mixin to give common button properties
         @mixin button-prop {
             display: block;
             width: 30%;
             text-align: center;
             align-self: center;
             margin: 1rem;
+            @extend %button !optional;
 
             @include mq-phone {
                 align-self: flex-end;
@@ -124,11 +136,15 @@
 
         @include button-prop();
 
+        /// modifier of the button element.
+        /// makes the background light-aubergine
         &--tc-sec1 {
             @include button-prop();
             background: tint(getColor(sec1), 30%);
         }
 
+        /// modifier of the button element.
+        /// makes the background ubuntu orange.
         &--tc-prim1 {
             @include button-prop();
             background: tint(getColor(prim1), 30%);

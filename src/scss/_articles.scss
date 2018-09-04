@@ -36,6 +36,7 @@
     @include isGridItem(span 1);
     background: getColor(prim2);
     // padding: 1.2vw;
+    font-weight: 300;
     padding: 1rem;
     text-align: justify;
     text-justify: newspaper;
@@ -63,6 +64,7 @@
     p {
         // color: getColor(tri2);
         // margin: 1rem 0;
+        font-weight: 300;
         margin-bottom: 1rem;
         padding: 0;
     }

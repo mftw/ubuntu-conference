@@ -14,7 +14,8 @@ html {
     $max_width: $dekstop-width;
     $min_font: 14px;
     $max_font: 19px;
-    @include fluid-font($min_width, $max_width, $min_font, $max_font);  
+    @include fluid-font($min_width, $max_width, $min_font, $max_font); 
+    line-height: 1.4; 
     box-sizing: border-box;
     scroll-behavior: smooth;
 
@@ -73,7 +74,7 @@ body {
 @for $i from 1 through 6 {
     h#{$i} {
         // font-family: $main-font;
-        @extend %main-font;
+        @extend %main-font !optional;
     }
 }
 
@@ -109,7 +110,7 @@ figure {
 }
 
 p {
-    font-weight: 400;
+    font-weight: 300;
     color: getColor(tri3);
 }
 
