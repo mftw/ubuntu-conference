@@ -1,0 +1,128 @@
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group Program class
+////
+//
+
+/// Class for the ubuntu program
+.program {
+    // @include isGridItem('2 / 3');
+    // @include isSubGridContainer('2 / 3', null, '1fr 1fr');
+    // @include isSubGridContainer('2 / 3', null, 'minmax(3vw, auto) 1fr 1fr minmax(3vw, auto)');
+    @include isSubGridContainer('2 / 3', null, '0px 1fr 1fr 0px');
+    // grid-column: 2 / 3;
+    grid-auto-flow: dense;
+    gap: 3vw;
+
+    .mini-article {
+        figure {
+            
+            img {
+                min-height: 25vmin;
+                height: 25vh;
+                max-height: 25vmax;
+                object-fit: cover;
+            }
+        }
+    }
+
+    @include mq-phone {
+        & > *:nth-child(3){
+            margin-top: 6vw;
+        }
+        & > *:last-child {
+            margin-bottom: 6vw;
+        }
+    }
+    
+    @include mq-tablet {
+        & > *:nth-child(3){
+            margin-top: 6vw;
+        }
+        & > *:last-child {
+            margin-bottom: 6vw;
+        }
+    }
+
+    /// Mixin to give common article properties
+    @mixin article-props {
+        & {
+            $color: shade(getColor(prim2), 10%);
+            color: $color;
+            // font-weight: 400;
+
+            figure {
+                figcaption {
+                    color: $color;
+                }
+            }
+
+            a {
+                color: $color;
+                &:hover {
+                    text-decoration-color: $color;
+                }
+            }
+
+            &__headline {
+                font-size: 3rem;
+                font-weight: 400;
+                margin: 3vw 0 0 0;
+                padding: 0;
+                text-align: center;
+                color: tint(getColor(prim3), 85%);
+
+                @include mq-phone {
+                    display: none;
+                }
+    
+                @include mq-tablet {
+                    display: none;
+                }
+            }
+
+            @include mq-phone {
+                grid-column: 2 / 4;
+            }
+    
+            @include mq-tablet {
+                grid-column: 2 / 4;
+                // grid-row: -1;
+            }
+        }
+    }
+    /// iot element of the program class.
+    &__iot {
+        grid-column: 2 / span 1;
+        background: tint(getColor(prim1), 70%);
+
+        @include article-props;
+
+        /// headline element of the iot class
+        &__headline {
+            grid-column: 2 / span 1;
+            grid-row: 1 / 2;
+            // color: getColor(prim1)
+            // background: linear-gradient(90deg, rgba(255,255,255,0) 0%, tint(getColor(prim1), 80%) 25%, tint(getColor(prim1), 80%) 75%, rgba(255,255,255,0) 100%);
+            // background: linear-gradient(90deg, rgba(255,255,255,0) 0%, tint(getColor(prim1), 80%) 50%, rgba(255,255,255,0) 100%);
+        }
+    }
+
+    /// desktop element of the program class
+    &__desktop {
+        grid-column: 3 / span 1;
+        background: tint(getColor(sec1), 70%);
+
+        @include article-props;
+        
+        /// headline element of the desktop class
+        &__headline {
+            grid-column: 3 / span 1;
+            grid-row: 1 / 2;
+            // color: getColor(sec1);
+            // background: linear-gradient(90deg, rgba(255,255,255,0) 0%, tint(getColor(sec1), 80%) 25%, tint(getColor(sec1), 80%) 75%, rgba(255,255,255,0) 100%);
+            // background: linear-gradient(90deg, rgba(255,255,255,0) 0%, tint(getColor(sec1), 80%) 50%, rgba(255,255,255,0) 100%);
+        }
+    }
+}

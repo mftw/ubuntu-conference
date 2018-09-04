@@ -1,0 +1,20 @@
+@function strip-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+@function px2rem($px, $root-px: 16){
+    $value: strip-unit($px);
+    $root-value: strip-unit($root-px);
+    @return $value / $root-value + rem;
+}
+
+@mixin squareElement($size) {
+    @if ($size == null) or (type-of($size) != number) {
+        @warn 'should be a number';
+    } 
+    min-height: $size;
+    max-width: $size; 
+}
